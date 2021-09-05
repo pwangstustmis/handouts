@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>程式設計(一)</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">程式設計(一)<br/>Python</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">程式語言簡介與軟體安裝</a></span>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">Python Basics</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="basics.html">Python語法、變數、資料類型與運算子</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="basics.html">資料類型操作</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">條件與迴圈</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">函數、lambda函數與模組</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">物件、類別</a></li>
+            </ul>
+          </div>
+        </li>     
+        
+        <li href="#" class="nav-link">
+          <i class="fas fa-file"></i>
+          <span class="mx-2">第一個專案</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">程式語言簡介與軟體安裝</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">程式語言</h3>
+        <p class="px-3">
+          程式語言用於開發實作專案，不同的專案，開發者挑選符合需求的程式語言來完成專案。大部分的程式語言具相同基本架構如變數、資料類型、運算子、條件、迴圈、函數、物件等，不同的是個別程式撰寫語法或提供的功能多寡而以，這裡所謂的語法是指程式語言撰寫的方式，就像日常語言中文有中文寫法，英文有英文的寫法等。所以學習程式語言應著重於解決思考能力的培養，因為大部分的程式撰寫方式是相同的，課程以Python為開始，除了容易撰寫的特性之外，Python也是後續課程(資料分析、大數據、物聯網與人工智慧應用等)與業界會用到的工具。
+        </p>
+        <h3 class="text-dark p-3">軟體安裝</h3>
+        <p class="px-3">
+          Python安裝須包含整合開發環境(IDE-Integreated Development Environment)，市面上有許多Python IDE(PyCharm、Atom、Spyder、VSCode等)，課程使用微軟開源Visual Studio Code，要使用VS Code開發Python，軟體下載與安裝步驟如下：
+        </p>
+        <h5 class="text-dark p-4">1. 下載並安裝<a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a></h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-1.png" width="60%"/>
+        </p>
+        <h5 class="text-dark p-4">2. 設定VS Code顯示語言為中文(點選左邊橘色延伸模組並在黃色搜尋方塊輸入chinese language)後，選擇繁體中文並選install進行安裝，安裝後軟體會要求重啟。</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-2.png" width="60%"/>
+        </p>
+        <h5 class="text-dark p-4">3. 下載最新版本<a href="https://www.python.org/downloads/" target="_blank">Python</a>並以系統管理員權限執行安裝。</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-3.png" width="60%"/>
+        </p>
+        <h5 class="text-dark p-4">4. 安裝VS Code Python延伸模組</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-4.png" width="60%"/>
+        </p>
+        <h5 class="text-dark p-4">5. 驗證Python安裝成功(開啟命令提示字元視窗並輸入 py -3 --version)，會顯示安裝Python版本</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-5.png" width="60%"/>
+        </p>
+        <h5 class="text-dark p-4">6. 使用VS Code 檔案-開啟資料夾 開啟檔案位置資料夾(例python_workspace)</h5>
+        <h5 class="text-dark p-4">7. 設定Python執行環境，選擇 檢視-命令選擇區 後，在命令選擇區輸入 Python: Select Interpreter ，選擇 Python:選擇直譯器 (如第一張圖)，接下來選擇安裝版本Python((如第二張圖)</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-6.png" width="60%"/><br/><br/>
+          <img src="imgs/intro/soft-7.png" width="60%"/>
+        </p>
+        <h5 class="text-dark p-4">8. 開新檔案，輸入如圖程式後，將檔案存成 hello.py ，點選圖右邊執行，會看到如圖下方結果</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-8.png" width="60%"/>
+        </p>
+        <h5 class="text-dark p-4">9. 設定程式除錯，請選擇 執行-啟動偵錯 後(如第一張圖)，接下來會讓使用者選偵錯檔案類型，請選擇 Python檔案 (如第二張圖)，之後設定中斷點(如第三張圖黃色框)與選擇在終端機執行Python檔案(如第三張圖紅色框)後，就可以點選執行並偵錯(如第四張圖)。請注意：偵錯僅需設定做一次。</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-9.png" width="60%"/><br/><br/>
+          <img src="imgs/intro/soft-10.png" width="60%"/><br/><br/>
+          <img src="imgs/intro/soft-11.png" width="60%"/><br/><br/>
+          <img src="imgs/intro/soft-12.png" width="60%"/>
+        </p>
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網頁程式設計</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">程式設計(一)<br/>Python</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">程式語言簡介與軟體安裝</a></span>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">Python Basics</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="basics.html">Python語法、變數、資料類型與運算子</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="basics.html">資料類型操作</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">條件與迴圈</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">函數、lambda函數與模組</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">物件、類別</a></li>
+            </ul>
+          </div>
+        </li>     
+        
+        <li href="#" class="nav-link">
+          <i class="fas fa-file"></i>
+          <span class="mx-2">第一個專案</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">課程簡介</li>
+          <li class="breadcrumb-item">Python語法、變數、資料類型與運算子</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">Python語法</h3>
+        <div class="px-3">
+          <p>Python檔案的副檔名為.py，縮排在Python代表程式區塊，在Python中程式區塊不像一般程式語言使用 <code style="color:#f00">{ }</code> ，相反地使用縮排的方式來代表程式區塊，具有相同間距的程式屬於同一區塊，間距的大小並沒有限制，但是不同的程式區塊最少要間距1個空白。以下徒為例，我燜可以看到程式 <code style="color:#f00">print(msg)</code> 出現錯誤，由於它屬於條件 if 的程式區塊，而它與對應 if 命令的啟示位置相同，程式註解使用 <code style="color:#f00">#</code> 如下圖。</p>
+          <img src="imgs/basics/syntax-1.png" width="60%"><p></p>
+        </div>
+        
+        <div class="px-3">
+          <h5>變數設定</h5>
+          <p>
+            變數的目的用於儲存輸入資料或計算結果，Python變數名稱可由英文字或底線符號(_)開始，同時變數名稱大小寫英文字視為不同的變數，不同於強形態語言，Python變數不須宣告儲存類型，同時變數資料類型會隨儲存值而改變(如下圖)，下圖中 <code style="color:#f00">type()</code> 函數用於回傳變數資料類型。雖然變數資料類型會隨儲存值而改變，可是使用者有時會想要明確設定變數資料類型，這個時後可以使用接下來的變數資料類型來產生或轉換成對應類型。
+          </p>
+          <img src="imgs/basics/syntax-2.png" width="60%"><p></p>   
+        </div>
+
+        <div class="px-3">
+          <h5>變數資料類型</h5>
+          <p>Python資料類型包含：文字類型(<code style="color:#f00">str</code>)、數字類型(<code style="color:#f00">int、float、complex</code>)、順序類型(<code style="color:#f00">list、tuple、range</code>)、對應類型(<code style="color:#f00">dict</code>)、集合類型(<code style="color:#f00">set、frozenset</code>)、布林類型(<code style="color:#f00">bool</code>)、二進制類型(<code style="color:#f00">bytes、bytearray、memoryview</code>)，以下對於各個資料類型進行簡單描述。</p>
+
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">文字類型(<code style="color:#f00">str</code>)：</div>
+          <p>
+            文字類型變數會將值至於雙引號或單引號內(如下圖)
+          </p>
+          <img src="imgs/basics/syntax-3.png" width="60%"><p></p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">數字類型(<code style="color:#f00">int、float、complex</code>)：</div>
+          <p>
+            數字類型可用於計算，下圖印出 <code style="color:#f00">int、float、complex</code> 數字類型，複數開根號函數定義於 <code style="color:#f00">cmath</code> 模組中，因此使用 <code style="color:#f00">import</code> 命令匯入 <code style="color:#f00">cmath</code> 模組，常用模組會在後續課程說明。
+          </p>
+          <img src="imgs/basics/syntax-4.png" width="60%"><p></p>
+          <p>
+            下圖顯示當使用者對文字性數字進行運算時，Python會顯示顯示錯誤，Python <code style="color:#f00">+</code> 號除了用於數字計算之外，如果對象為文字時， <code style="color:#f00">+</code> 號用於文字合併。但是當使用者如果希望將文字性的整數 <code style="color:#f00">a</code> 轉換為數字，則可使用資料類型 <code style="color:#f00">int</code> 來進行轉換，浮點數與複數的轉換使用 <code style="color:#f00">float</code> 與 <code style="color:#f00">complex</code>。
+          </p>
+          <img src="imgs/basics/syntax-5.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-6.png" width="60%"><p></p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">順序類型(<code style="color:#f00">list、tuple、range</code>)：</div>
+          <p>
+            順序類型(<code style="color:#f00">list、tuple、range</code>)用單一變數儲存一連串的資料，差異是在清單(<code style="color:#f00">list</code>)將資料置於方括號(<code style="color:#f00">[]</code>)中、元素(<code style="color:#f00">tuple</code>)將資料置於小括號(<code style="color:#f00">()</code>)中、範圍(<code style="color:#f00">range</code>)則為一整數序列。清單(<code style="color:#f00">list</code>)項目內容可改變，有順序，使用方括號來建立清單，方括號搭配項目參考位置值來存取項目，第一個項目參考位置值為0，清單項目內容值可以不同。
+          </p>
+          <img src="imgs/basics/syntax-7.png" width="60%"><p></p>
+          <p>
+            元素(<code style="color:#f00">tuple</code>)項目內容建立後不可改變，有順序，使用小括號建立元素，方括號搭配項目參考位置值來存取項目，第一個項目參考位置值為0，元素項目內容值可以不同，如果元素建立後改變內容會產生錯誤。
+          </p>
+          <img src="imgs/basics/syntax-8.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-9.png" width="60%"><p></p>
+          <p>
+            範圍(<code style="color:#f00">range</code>)項目為順序整數值，有順序，內容建立後不可改變，使用<code style="color:#f00">range()</code>函數來產生範圍項目，方括號搭配項目參考位置值來存取項目，第一個項目參考位置值為0。
+          </p>
+          <img src="imgs/basics/syntax-10.png" width="60%"><p></p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">對應類型(<code style="color:#f00">dict</code>)：</div>
+          <p>
+            對應類型(<code style="color:#f00">dict</code>)將資料定義於大括號(<code style="color:#f00">{}</code>)中，項目資料為許多 <code style="color:#f00">項目名稱:項目值</code> 的組合，使用者可使用方括符搭配項目名稱來取得項目值，項目名稱不可重複，項目內容可改變，有順序。
+          </p>
+          <img src="imgs/basics/syntax-11.png" width="60%"><p></p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">集合類型(<code style="color:#f00">set、frozenset</code>)：</div>
+          <p>
+            集合類型(<code style="color:#f00">set</code>)將資料定義於大括號(<code style="color:#f00">{}</code>)中，項目資料不可重複，項目內容可增減，沒有順序(資料位置不代表順序)，使用者可以用迴圈搭配運算子 <code style="color:#f00">in</code> 來取得或檢查集合項目。集合類型(<code style="color:#f00">frozenset</code>)將可循環資料類型(<code style="color:#f00">list、tuple、dict、set</code>)轉換為內容不可增減的集合物件。
+          </p>
+          <img src="imgs/basics/syntax-12.png" width="60%"><p></p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">二進制類型(<code style="color:#f00">bytes、bytearray、memoryview</code>)：</div>
+          <p>
+            <code style="color:#f00">bytes</code> 為有順序、不可修改，使用方式為(<code style="color:#f00">bytes(資料,編碼方式)</code>)。中，<code style="color:#f00">bytearray</code> 為有順序、可修改，使用方式同 <code style="color:#f00">bytes</code> 。<code style="color:#f00">memoryview</code> 讓使用者在程式執行過程中可以直接存取 <code style="color:#f00">bytes、bytearray</code> 值，加快存取速度。
+          </p>
+          <img src="imgs/basics/syntax-13.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-14.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-15.png" width="60%"><p></p>
+            
+        </div>
+
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網頁程式設計</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">網頁程式設計<br/>ASP.Net Core</p>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">課程簡介</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="index.html">網頁應用架構</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">HTML</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">CSS</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">JavaScript</a></li>
+            </ul>
+          </div>
+        </li>     
+        
+        <li href="#" class="nav-link">
+          <span class="mx-2">第一個專案</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">課程簡介</li>
+          <li class="breadcrumb-item active">網頁應用架構</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">網頁應用架構</h3>
+        <p class="text-center">
+          <img src="imgs/introduction/intro-1.png"/>
+        </p>
+        <p class="px-3">
+          網頁應用開發可區分為前端與後端，前端開發也稱為客戶端開發，如上圖左半部，網站或網頁應用程式利用HTML、CSS與JavaScript進行設計，讓便用者可以直接查看它們並與之互動。後端開發主要著重於網站的工作方式，提供處理程序的功能和邏輯，使用的技術內容不會被用戶直接看到，後端技術是伺服器，應用程序和資料庫的組合，後端程式會編寫API或與資料庫互動的程式、建立程式庫、處理商業流程和資料架構等，常用的後端語言包含Java、PHP、.NET、Ruby、Python、SQL、JavaScript等。雖然後端開發著重於網站的工作方式，但是仍須借助前端設計來呈現後端處理的結果，因此後端開發仍須具有前端開發的能力。
+        </p>
+        <p class="px-3">
+          課程將介紹ASP.NET Core框架，ASP.NET Core是一個免費的開源 Web框架並繼承ASP.NET，它由微軟負責開發並維護。ASP.NET Core是一個模組化框架，可在完整的.NET Framework、Windows和跨平台 .NET 上運行。不同於微軟ASP.NET架構，ASP.NET Core最大的優勢為開源與誇平台(支援Windows、MacOS與Linux)，而ASP.NET僅用於開發Windows平台Web應用。
+        </p>
+        <h3 class="text-dark p-3">軟體安裝</h3>
+        <p class="px-3">
+          課程使用微軟Visual Studio community 2019，使用者可至<a href="https://visualstudio.microsoft.com/zh-hant/vs/community/" target="_blank">官網下載</a>，軟體下載與安裝步驟如下：
+        </p>
+        <h5 class="text-dark p-4">1. 下載軟體-點選下載Visual Studio</h5>
+        <p class="px-3">
+          <img src="imgs/introduction/soft-1.png" width="90%"/>
+        </p>
+        <h5 class="text-dark p-4">2. 安裝軟體-下載後執行並點選繼續</h5>
+        <p class="px-3">
+          <img src="imgs/introduction/soft-2.png" width="90%"/>
+        </p>
+        <h5 class="text-dark p-4">3. 安裝模組-選擇ASP.NET與網頁程式開發、資料儲存與處理後點選安裝</h5>
+        <p class="px-3">
+          <img src="imgs/introduction/soft-3.png" width="90%"/><br/>
+          <img src="imgs/introduction/soft-4.png" width="90%"/>
+        </p>
+        <h5 class="text-dark p-4">4. 安裝.NET-下載後安裝</h5>
+        <p class="px-3">
+          請至<a href="https://dotnet.microsoft.com/download" target="_blank">官網</a>下載對應平台最新版.NET SDK並安裝。<br/>
+          <img src="imgs/introduction/soft-5.png" width="90%"/><br/><br/>
+          <img src="imgs/introduction/soft-6.png" width="90%"/>
+        </p>
+        <h5 class="text-dark p-4">5. 軟體註冊</h5>
+        <p class="px-3">
+          Visual Studio Communinity為免費軟體，但需要註冊才能免除30天試用限制，使用者如有微軟帳號，請直接用微軟帳號登入即可，如果沒有，請自行建立。<br/>
+          <img src="imgs/introduction/soft-7.png" width="90%"/><br/><br/>
+          <img src="imgs/introduction/soft-8.png" width="90%"/>
+        </p>
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>

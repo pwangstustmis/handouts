@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>基本程式設計-Python</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="js/solid.js"></script>
+    <script defer src="js/fontawesome.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Python基礎課程</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html">課程簡介</a>
+                </li>
+                <li>
+                    <a href="basics.html">變數、資料類型與運算子</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">程式語法</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="syntaxinout.html">語法、輸入與輸出</a>
+                        </li>
+                        <li>
+                            <a href="condition.html">條件</a>
+                        </li>
+                        <li>
+                            <a href="loop.html">迴圈</a>
+                        </li>
+                        <li>
+                            <a href="function.html">函數</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <h2>課程目標</h2>
+            <p>為了幫助非資訊領域同學具備基礎程式實作的能力，導入Python基礎程式設計課程，課程採模組化設計包含變數、資料類型與運算子、條件、迴圈與函數，同時將課程內容與非資訊領域同學經常使用的試算表軟體(Excel)進行對照。為驗證同學學習後實際的程式設計能力，將使用程式自學平台(<a href="https://e-tutor.itsa.org.tw/e-Tutor/" class="article" target="_blank">E-Tutor</a>)線上題庫中基礎題目專區的對應題目作為跨域同學程式模組的驗證機制，實際驗證同學在每個模組的學習成效。
+                </p>
+            
+            <div class="line"></div>
+
+            <h2>E-Tutor帳號註冊與登入</h2>
+            <p>請同學前往程式自學平台(<a href="https://e-tutor.itsa.org.tw/e-Tutor/" class="article" target="_blank">E-Tutor</a>)並進行帳號註冊與登入。登入後請點選 程式自學平台-線上題庫-基礎題目專區。
+            </p>
+
+            <div class="line"></div>
+
+            <h2>Python線上執行環境</h2>
+            <p>請點選<a href="https://jupyter.org/try" class="article" target="_blank">瀏覽器開啟Jupyter</a>中Try Classic Notebook，開啟瀏覽器版Jupter norebook後如圖1，請將Markdown選項改為Code，會看到如圖2程式模式，使用者可以在綠色方塊輸入下列程式並點選Run執行</p>
+            <p><div style="border:2px solid rgb(163, 10, 163);padding: 10px;;"><pre><code>print('Hello')</code></pre></div></p>
+            <p><img src="imgs/index-1.png"/></p>
+            <p class="text-center">圖1. 瀏覽器版本Jupyter Notebook</p>
+            <p><img src="imgs/index-2.png"/></p>
+            <p class="text-center">圖2. 瀏覽器版本Jupyter Notebook程式模式</p>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{"menus":[
+    {
+        "title":"課程簡介 & 軟體安裝",
+        "link": "introduction.html",
+        "children":[],
+        "toggleid":""
+    },
+    {
+        "title":"前端技術簡介",
+        "link": "",
+        "children":[
+            {
+                "title":"HTML",
+                "link":"html.html",
+                "children":[]
+            },
+            {
+                "title":"CSS",
+                "link":"css.html",
+                "children":[]
+            },
+            {
+                "title":"Javascript",
+                "link":"javascript.html",
+                "children":[]
+            }
+        ],
+        "toggleid":"sub1"
+    }
+]}

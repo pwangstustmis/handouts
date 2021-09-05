@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網頁程式設計</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">網頁程式設計<br/>ASP.Net Core</p>
+        </li>     
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">課程簡介</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="index.html">網頁應用架構</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">HTML簡介</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">CSS簡介</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">JavaScript簡介</a></li>
+            </ul>
+          </div>
+        </li>
+        <li href="#" class="nav-link">
+          <i class="fas fa-file"></i>
+          <span class="mx-2">第一個專案</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">課程簡介</li>
+          <li class="breadcrumb-item">CSS簡介</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">CSS簡介</h3>
+        <p class="px-3">
+          了解常用HTML標簽後，使用者會希望網頁能有自訂版面規劃如字型、顏色、位置等，因此導入CSS(Cascading Style Sheet)，學習CSS除了必須了解CSS屬性意義及其設定方式，更重要的是樣式的套用對象(selector)，除此之外，請注意CSS具傳遞性質，對某一對象設定樣式時，所有包含於這個對象中的內容，預設就會套用該對象樣式。本單元僅介紹常用CSS屬性，詳細的介紹，請參考<a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS</a>。
+        </p>
+        
+        <div class="px-3">
+          <h5>CSS設定語法</h5>
+          <p>CSS設定包含行內(inline)、內部(internal)與external(外部)三種定義方式。行內(inline)是指將樣式設定於HTML標籤style屬性中，設定方式為 <code style="color:#f00">屬性:樣式值;</code> ，設定可包含多個屬性。內部(internal)是將樣式定義於HTML檔檔頭(head)位置內，並包含於HTML style標籤中，設定方式為 <code style="color:#f00">設定對象 {屬性:樣式值;}</code> ，設定可包含多個屬性。external(外部)是將樣式存於副檔名為 .css 的獨立檔案，並在網頁檔頭(head)位置內利用HTML link標籤載入對應的樣式檔。接下來以行內(inline)、內部(internal)與external(外部)三種定義方式來定義選擇對象為段落(p)，樣式為紅色字體、大小12pt。</p>
+          <p style="color:#f00;font-size:12pt;">段落紅色字體、大小12pt</p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">行內(inline)CSS設定：</div>
+          <pre><code>
+&lt;p style="color:#f00;font-size:12pt;"&gt;段落紅色字體、大小12pt&lt;/p&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">內部(internal)CSS設定[設定對象為段落標籤p]：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+...
+&lt;p&gt;段落紅色字體、大小12pt&lt;/p&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">外部(external)CSS設定，將內部設定中段落p樣式存於外部檔案假設為style.css：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+...
+&lt;p&gt;段落紅色字體、大小12pt&lt;/p&gt;
+          </code></pre>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請建立外部檔案style.css並測試樣式套用成功。
+          </h4><p></p>       
+        </div>
+
+        <div class="px-3">
+          <h5>設定對象-簡單對象</h5>
+          <p>CSS樣式設定如同先前HTML標籤，使用者必須了解各個CSS樣式屬性設定方式，但是在介紹常用CSS屬性之前，使用者必須先了解樣式套用對象的設定，對象設定包<a href="https://www.w3schools.com/css/css_selectors.asp" target="_blank">簡單(simple)</a>、<a href="https://www.w3schools.com/css/css_combinators.asp" target="_blank">混合(combinator)</a>、<a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">虛擬類別(pseudo classes)</a>與<a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">屬性選擇(attribute selector)</a>四大類，這裡僅對每一類常用項目作介紹，其他設定請參考連結網頁。簡單對象包含HTML標籤名稱、id名稱、自訂類別、全部對象與多個對象。</p>
+          <ul style="color:rgb(20, 113, 220)">
+            <li>HTML標籤名稱會將樣式套用於網頁所有設定對象標籤，例如在CSS語法中段落標籤p設定。</li>
+            <li>網頁標籤可以設定不重複id屬性，id屬性用於識別各個標籤，CSS設定id屬性對象必須搭配 <code style="color:#f00">#</code> 來標示指定id標籤。</li>
+            <li>自訂類別為了讓樣式設定更具彈性，使用者在HTML標籤透過屬性 <code style="color:#f00">class</code> 即可套用樣式。</li>
+            <li>全部對象使用 <code style="color:#f00">*</code> 代表網頁全部標籤屬。</li>
+            <li>多個對象使用 <code style="color:#f00">,</code> 來隔開多個選擇對象。以下範例均以內部(internal)CSS設定表示。</li>
+          </ul>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">HTML標籤名稱CSS設定：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+...
+&lt;p&gt;段落紅色字體、大小12pt&lt;/p&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">id屬性CSS設定：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;style&gt;
+    #pr12 {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+...
+&lt;p id="pr12"&gt;段落紅色字體、大小12pt&lt;/p&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">自訂類別CSS設定：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;style&gt;
+    .pr12 {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+...
+&lt;p class="pr12"&gt;段落紅色字體、大小12pt&lt;/p&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">全部對象CSS設定：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;style&gt;
+    * {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+...
+&lt;p&gt;段落紅色字體、大小12pt&lt;/p&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">多個對象CSS設定：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;style&gt;
+    p,h1 {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+...
+&lt;p&gt;段落紅色字體、大小12pt&lt;/p&gt;
+&lt;h1&gt;段落紅色字體、大小12pt&lt;/h1&gt;
+          </code></pre>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習1：請將網頁預設字體大小設為14pt、深灰色。
+          </h4>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習2：請在網頁中設定一大標題(h1)的id名稱為 myh1 ，並使用CSS id屬性對象設定其字體大小設為20pt、橘色。
+          </h4>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習3：請修改練習2為自訂類別CSS設定，設定一CSS類別為 myh1 ，字體大小設為20pt、橘色並套用於任一HTML標籤。
+          </h4><p></p>     
+        </div>
+
+        <div class="px-3">
+          <h5>設定對象-混合對象</h5>
+          <p>混合對象藉由空白、&gt;、+與~來設定樣式套用的關係。<br/><code style="color:#f00">對象1 對象2</code> 對象1空白對象2，代表所有包含於對象1的對象2套用該樣式。<br/><code style="color:#f00">對象1 &gt; 對象2</code> 當對象2為對象1小孩時套用該樣式。<br/><code style="color:#f00">對象1 + 對象2</code> 對象2為對象1立即相鄰的兄弟套用該樣式。<br/><code style="color:#f00">對象1 ~ 對象2</code> 對象2為對象1之後的兄弟套用該樣式。</p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁內容個別套用後續CSS樣式來了解個別設定差異。
+          </h4><p></p>           
+            <pre><code>
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;
+      隸屬div方塊小孩
+      &lt;p&gt;隸屬段落p小孩，隸屬div小孩(p)-小孩(p)&lt;/p&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      隸屬div方塊小孩
+      &lt;p&gt;隸屬段落p小孩，隸屬div小孩(p)-小孩(p)&lt;/p&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>
+          </p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">CSS設定：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;style&gt;
+    div p {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;head&gt;
+  &lt;style&gt;
+    div &gt; p {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;head&gt;
+  &lt;style&gt;
+    div + p {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;head&gt;
+  &lt;style&gt;
+    div ~ p {
+      color:#f00;
+      font-size:12pt;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+          </code></pre>               
+        </div>
+
+        <div class="px-3">
+          <h5>設定對象-虛擬類別</h5>
+          <p>虛擬類別用於定義當類別處於某些狀態時套用的CSS樣式，使用方式為 <code style="color:#f00">類別名稱:虛擬類別</code> ，常用虛擬類別包含：</p>
+          <ul style="color:rgb(20, 113, 220)">
+            <li><code style="color:#f00">active</code> 用於設定點選時CSS類別類別。</li>
+            <li><code style="color:#f00">checked</code> 用於設定核取時CSS類別類別。</li>
+            <li><code style="color:#f00">focus</code> 用於設定文字方塊點選時CSS類別類別。</li>
+            <li><code style="color:#f00">hover</code> 用於設定滑鼠移上時CSS類別類別。</li>
+            <li><code style="color:#f00">link</code> 用於設定連結標籤a未曾拜訪過CSS類別類別。</li>
+            <li><code style="color:#f00">visited</code> 用於設定連結標籤a拜訪過點選時CSS類別類別。</li>
+          </ul>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁內容逐一套用上述CSS樣式設定來了解個別差異。
+          </h4><p></p> 
+          <p> 
+            <pre><code>
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;active虛擬類別-點選時字變紅色&lt;/p&gt;
+    &lt;input type="checkbox"&gt;checked虛擬類別-核取時變紅色&lt;/p&gt;
+    &lt;input type="text"&gt;focus虛擬類別-點選時字變紅色&lt;/p&gt;
+    &lt;a href="#"&gt;hover虛擬類別-滑鼠移上時字變紅色&lt;/a&gt;
+    &lt;a href="https://www.cwb.gov.tw/V8/C/"&gt;link虛擬類別-設定連結標籤a未曾拜訪過時字變紅色&lt;/a&gt;
+    &lt;a href="https://www.stust.edu.tw/"&gt;link虛擬類別-設定連結標籤a拜訪過時字變紅色&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>             
+        </div>
+
+        <div class="px-3">
+          <h5>設定對象-屬性選擇</h5>
+          <p>屬性選擇更具彈性的對性選擇方式，這裡僅介紹最常用的兩種使用方式為 <code style="color:#f00">標籤名稱類[屬性名稱]="屬性值"</code> 或 <code style="color:#f00">標籤名稱類[屬性名稱]~="屬性值"</code>，其他屬性選擇設定請參考課程最上方連結位置。<code style="color:#f00">標籤名稱類[屬性名稱]="屬性值"</code> 用於設定標籤屬性等於設定屬性值，<code style="color:#f00">標籤名稱類[屬性名稱]~="屬性值"</code> 用於設定標籤屬性有設定屬性值。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁中段落標籤p的標題(title)屬性值為南臺設為紅色、標籤p的標題(title)屬性值包含資管設為綠色。
+          </h4><p></p>
+            <pre><code>
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;p title="南臺"&gt;標題屬性為南臺&lt;/p&gt;
+    &lt;p title="南臺 企管"&gt;標題屬性為南臺 企管&lt;/p&gt;
+    &lt;p title="南臺 資管"&gt;標題屬性為南臺 資管&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>
+            <p>介紹CSS對象設定後，接下來我們將簡述CSS屬性設定，這裡僅涵蓋通用屬性顏色(<code style="color:#f00">color</code>)、字型(<code style="color:#f00">font</code>)、邊界與內聚(<code style="color:#f00">margin、padding</code>)、邊框(<code style="color:#f00">border</code>)、對齊(<code style="color:#f00">align</code>)與寬與高(<code style="color:#f00">width、height</code>)，其他樣式屬性請參考<a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS</a>。</p>            
+        </div>
+
+        <div class="px-3">
+          <h5>CSS屬性設定-顏色</h5>
+          <p>CSS顏色設定包含前景(字)與背景。前景顏色屬性名稱為 <code style="color:#f00">color</code> ，顏色值設定可以用 <code style="color:#f00">#紅綠藍</code> 其中紅綠藍分別代表紅色、綠色與藍色，設定值用16進位制(00~ff)，或是利用 <code style="color:#f00">rgb(紅,綠,藍) </code> 與 <code style="color:#f00">rgba(紅,綠,藍,透明度)</code> 來設定，使用 <code style="color:#f00">rgb(紅,綠,藍) </code> 各個顏色值為0到255，<code style="color:#f00">a</code>代表透明度，值為0到1，0代表透明(完全看不到)，1代表完全不透明(完全看得到)。背景屬性設定包含背景顏色 <code style="color:#f00">background-color</code> 、背景圖片 <code style="color:#f00">background-image</code> 、圖片重複方式 <code style="color:#f00">background-repeat</code> 、背景黏貼方式 <code style="color:#f00">background-attachment</code> 、背景位置 <code style="color:#f00">background-position</code> 與 <code style="color:#f00">background</code> ，而 <code style="color:#f00">background</code> 屬性是用一個屬性來整合表示先前個別背景屬性。背景顏色屬性 <code style="color:#f00">background-color</code> 同前景顏色設定，背景圖片 <code style="color:#f00">background-image</code> 設定為 <code style="color:#f00">url("圖片檔案位置")</code> ， 圖片重複方式 <code style="color:#f00">background-repeat</code> 預設為水平與垂直重複，使用者可以設定僅水平重複(<code style="color:#f00">repeat-x</code>)、僅垂直重複(<code style="color:#f00">repeat-y</code>)或不重複(<code style="color:#f00">no-repeat</code>)。背景黏貼方式 <code style="color:#f00">background-attachment</code> 值包含固定(<code style="color:#f00">fixed</code>)與捲動(<code style="color:#f00">scroll</code>)，設為固定則背景圖不會隨著視窗捲動而改變位置，捲動則背景圖會隨著視窗捲動而改變位置。背景位置 <code style="color:#f00">background-position</code> 常用值包含左上(<code style="color:#f00">left top</code>)、左中(<code style="color:#f00">left center</code>)、左下(<code style="color:#f00">left bottom</code>)、中上(<code style="color:#f00">center top</code>)、中中(<code style="color:#f00">center center</code>)、中下(<code style="color:#f00">center bottom</code>)、右上(<code style="color:#f00">right top</code>)、右中(<code style="color:#f00">right center</code>)、右下(<code style="color:#f00">right bottom</code>)。<code style="color:#f00">background</code> 屬性則是把先前屬性設定以一行表示。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁中第一段顏色設為綠色、第一個div方塊背景顏色設為透明度為0.2的藍色，第二個div方塊利用圖片。請用圖片<a href="imgs/introcss/background-image-sample.png" target="_blank">練習圖片</a>將網頁正中央設定固定單一背景圖片。
+          </h4><p></p>  
+            <pre><code>
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;南臺科技大學&lt;/p&gt;
+    &lt;div style="width:200px;height:200px;"&gt;&lt;/div&gt;
+    &lt;div style="width:600px;height:600px;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>             
+        </div>
+
+        <div class="px-3">
+          <h5>CSS屬性設定-字型</h5>
+          <p>CSS字型常用設定包含字型(<code style="color:#f00">font-family</code>)、大小(<code style="color:#f00">font-size</code>)、字樣式(<code style="color:#f00">font-style</code>)與字粗細(<code style="color:#f00">font-weight</code>)。<p></p>字型(<code style="color:#f00">font-family</code>)設定為 <code style="color:#f00">font-family:字型</code> ，預設字型包含 <code style="color:#f00">Sans-serif</code> 、 <code style="color:#f00">Arial</code> 、 <code style="color:#f00">Verdana</code> 、 <code style="color:#f00">Helvetica</code> 、 <code style="color:#f00">Tahoma</code> 、 <code style="color:#f00">"Trebuchet MS"</code> 、 <code style="color:#f00">"Times New Roman"</code> 、 <code style="color:#f00">Georgia</code> 、 <code style="color:#f00">Garamond</code> 、 <code style="color:#f00">"Courier New"</code> 與 <code style="color:#f00">"Brush Script MT"</code>。設定方式為 <code style="color:#f00">font-family: 字型名稱</code> ，多個字型則以逗點隔開，請注意字型設定在最後一般會包含 <code style="color:#f00">Sans-serif</code> ，目的是為確保當先前字型無法在入時，瀏覽器可以用預設字型顯示。除了預設字型外，使用者也可以載入外部字型，以<a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">Google Fonts</a>為例，載入方式如下：<br/>
+            在網頁擋頭位置加入 <code style="color:#f00">&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google字型名稱"&gt;</code> 後，接下來在字型(<code style="color:#f00">font-family</code>)中套用Google字型名稱即可。使用者可參閱<a href="https://fonts.google.com/" target="_blank">Ggoole字型</a>。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁中第一段以預設任一字型顯示，第二段請選取任一Goolge字型顯示。
+          </h4><p></p>
+            <pre><code>
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;南臺科技大學&lt;/p&gt;
+    &lt;p&gt;資訊管理系&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>
+            <p>
+              常用字型大小(<code style="color:#f00">font-size</code>)以像素點(<code style="color:#f00">px</code>)、點(<code style="color:#f00">pt</code>)、em約16px大小(<code style="color:#f00">em</code>)及vw代表現在視窗寬度值為0到100(<code style="color:#f00">100</code>)，其中vm會隨著視窗大小改變字體大小。
+            </p>
+            <p>
+              常用字型樣式(<code style="color:#f00">font-style</code>)包含正常(<code style="color:#f00">normal</code>)或斜體(<code style="color:#f00;font-style:italic;">italic</code>)。
+            </p>  
+            <p>
+              常用字型粗細(<code style="color:#f00">font-weight</code>)值從100到900，<code style="color:#f00;font-weight:400;">400</code> 為正常字體粗細，<code style="color:#f00;font-weight:700;">700</code> 為粗體字粗細，使用者可自行設定粗細值。
+            </p>      
+        </div>
+
+        <div class="px-3">
+          <h5>CSS屬性設定-邊界與內距</h5>
+          <p>CSS字型邊界(<code style="color:#f00">margin</code>)用於設定標籤與標籤之間的距離包含上(<code style="color:#f00">margin-top</code>)、下(<code style="color:#f00">margin-bottom</code>)、左(<code style="color:#f00">margin-left</code>)、右(<code style="color:#f00">margin-right</code>)，如果要同時設定4邊邊界可以用 <code style="color:#f00">margin</code> 來進行設定。內距(<code style="color:#f00">padding</code>)用於設定標籤內容上下左右的間距包含上(<code style="color:#f00">padding-top</code>)、下(<code style="color:#f00">padding-bottom</code>)、左(<code style="color:#f00">padding-left</code>)、右(<code style="color:#f00">padding-right</code>)，如果要同時設定4邊內距可以用 <code style="color:#f00">padding</code> 來進行設定。邊界與內距值可以是正負值，間距大小設定同字型大小。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁div方框完全靠左與靠上，也就是說綠色方塊左邊與上面不可有白色間距。
+          </h4><p></p>
+            <pre><code>
+&lt;body&gt;
+  &lt;div style="width:200px;height:200px;background-color:#0f0;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>     
+        </div>
+
+        <div class="px-3">
+          <h5>CSS屬性設定-邊框</h5>
+          <p>CSS字型邊框(<code style="color:#f00">border</code>)用於設定邊框，設定方式為 <code style="color:#f00">邊框屬性: 邊框粗細 邊框顏色 邊框樣式</code> ，粗細設定與自性大小設定相同，邊框顏色與顏色設定相同，邊框樣式包含圓點(<code style="color:#f00">dotted</code>)、虛線(<code style="color:#f00">dashed</code>)、實線(<code style="color:#f00">solid</code>)與雙線(<code style="color:#f00">double</code>)，邊框屬性包含上(<code style="color:#f00">border-top</code>)、下(<code style="color:#f00">border-bottom</code>)、左(<code style="color:#f00">border-left</code>)、右(<code style="color:#f00">border-right</code>)，如果要同時設定4邊邊框可以用 <code style="color:#f00">border</code> 來進行設定。圓角邊框會搭配border-radius屬性設定4個角的半徑值大小。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁第一個div方框設綠色、兩個像素點、實線邊框，第二個div方框設紅色、兩個像素點、30像素點圓角邊框，第三個div方框設黃色、兩個像素點、圓形邊框。
+          </h4><p></p>
+            <pre><code>
+&lt;body&gt;
+  &lt;div style="width:200px;height:200px;background-color:#f00;&gt;
+  &lt;/div&gt;
+  &lt;div style="width:200px;height:200px;background-color:#0f0;&gt;
+  &lt;/div&gt;
+  &lt;div style="width:200px;height:200px;background-color:#00f;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>     
+        </div>
+
+        <div class="px-3">
+          <h5>CSS屬性設定-邊框</h5>
+          <p>CSS字型邊框(<code style="color:#f00">border</code>)用於設定邊框，設定方式為 <code style="color:#f00">邊框屬性: 邊框粗細 邊框顏色 邊框樣式</code> ，粗細設定與自性大小設定相同，邊框顏色與顏色設定相同，邊框樣式包含圓點(<code style="color:#f00">dotted</code>)、虛線(<code style="color:#f00">dashed</code>)、實線(<code style="color:#f00">solid</code>)與雙線(<code style="color:#f00">double</code>)，邊框屬性包含上(<code style="color:#f00">border-top</code>)、下(<code style="color:#f00">border-bottom</code>)、左(<code style="color:#f00">border-left</code>)、右(<code style="color:#f00">border-right</code>)，如果要同時設定4邊邊框可以用 <code style="color:#f00">border</code> 來進行設定。圓角邊框會搭配border-radius屬性設定4個角的半徑值大小。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請將下列網頁第一個div方框設綠色、兩個像素點、實線邊框，第二個div方框設紅色、兩個像素點、30像素點圓角邊框，第三個div方框設黃色、兩個像素點、圓形邊框。
+          </h4><p></p>
+            <pre><code>
+&lt;body&gt;
+  &lt;div style="width:200px;height:200px;background-color:#f00;&gt;
+  &lt;/div&gt;
+  &lt;div style="width:200px;height:200px;background-color:#0f0;&gt;
+  &lt;/div&gt;
+  &lt;div style="width:200px;height:200px;background-color:#00f;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>     
+        </div>
+
+        <div class="px-3">
+          <h5>CSS屬性設定-對齊</h5>
+          <p>CSS字型對齊涵蓋許多屬性包含邊界(<code style="color:#f00">margin</code>)、文字對齊(<code style="color:#f00">text-align</code>)、位置(<code style="color:#f00">position</code>)、浮動(<code style="color:#f00">float</code>)、彈性方塊(<code style="color:#f00">flexbox</code>)等可用於設定對齊方式，在此僅介紹邊界、文字對齊與位置。
+          </p>
+          <p>
+            藉由設定邊界值為auto來對標籤行水平對齊，一定要設width屬性否則無法對齊，同時width值不可為100%。
+            <div style="width:20%;margin:auto;">
+              <img src="imgs/introhtml/imgbutton.png">
+            </div>
+            <h1 style="width:20%;margin:auto;">南臺科技大學</h1>
+          </p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">HTML原始碼：</div>
+          <pre><code>
+&lt;div style="width:20%;margin:auto;"&gt;
+  &lt;img src="imgs/introhtml/imgbutton.png"&gt;
+&lt;/div&gt;
+&lt;h1 style="width:20%;margin:auto;"&gt;南臺科技大學&lt;/h1&gt;
+          </code></pre>
+          <p>
+            藉由設定文字對齊 <code style="color:#f00">text-align</code> 設定靠左(<code style="color:#f00">left</code>)、置中(<code style="color:#f00">center</code>)、靠右(<code style="color:#f00">right</code>)、左右對齊(<code style="color:#f00">justify</code>)。
+            <div style="text-align:center;">
+              <img src="imgs/introhtml/imgbutton.png">
+              <h1>南臺科技大學</h1>
+            </div>
+          </p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">HTML原始碼：</div>
+          <pre><code>
+&lt;div style="text-align:center;"&gt;
+  &lt;img src="imgs/introhtml/imgbutton.png"&gt;
+  &lt;h1&gt;南臺科技大學&lt;/h1&gt;
+&lt;/div&gt;
+          </code></pre>
+          <p>
+            藉由設定位置 <code style="color:#f00">position</code> 值絕對(<code style="color:#f00">absolute</code>)，並搭配與上距離(<code style="color:#f00">top</code>)、與下距離(<code style="color:#f00">bottom</code>)、與左距離(<code style="color:#f00">left</code>)、與右距離(<code style="color:#f00">right</code>)，下例圖片距右距離20px、距下距離20px。請注意位置值為 <code style="color:#f00">absolute</code> 是相對於包覆這個absolute的對象，因此一般位置值為 <code style="color:#f00">absolute</code> 對象會包覆於位置值為 <code style="color:#f00">relative</code> 中。
+            <div style="width:300px;height:300px;border:2px #0f0 solid;position:relative">
+              <img src="imgs/introhtml/imgbutton.png" style="position:absolute;right:20px;bottom:20px;">
+            </div>
+          </p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">HTML原始碼：</div>
+          <pre><code>
+&lt;div style="width:300px;height:300px;border:2px #0f0 solid;position:relative"&gt;
+  &lt;img src="imgs/introhtml/imgbutton.png" style="position:absolute;right:20px;bottom:20px;"&gt;
+&lt;/div&gt;
+          </code></pre>    
+        </div>
+
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>
