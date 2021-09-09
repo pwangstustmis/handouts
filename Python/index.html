@@ -30,7 +30,7 @@
               <li class="menuitem"><a class="nav-link" href="basics.html">Python語法、變數、資料類型與運算子</a></li>
             </ul>
             <ul>
-              <li class="menuitem"><a class="nav-link" href="basics.html">資料類型操作</a></li>
+              <li class="menuitem"><a class="nav-link" href="datatypefunctions.html">資料類型操作</a></li>
             </ul>
             <ul>
               <li class="menuitem"><a class="nav-link" href="intro-html.html">條件與迴圈</a></li>
@@ -73,37 +73,38 @@
         <p class="px-3">
           Python安裝須包含整合開發環境(IDE-Integreated Development Environment)，市面上有許多Python IDE(PyCharm、Atom、Spyder、VSCode等)，課程使用微軟開源Visual Studio Code，要使用VS Code開發Python，軟體下載與安裝步驟如下：
         </p>
-        <h5 class="text-dark p-4">1. 下載並安裝<a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a></h5>
+        <h5 class="text-dark p-4">1. 下載並安裝<a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a>(安裝程式編輯器，執行後請按下一步直到安裝完成)</h5>
         <p class="px-3">
           <img src="imgs/intro/soft-1.png" width="60%"/>
         </p>
-        <h5 class="text-dark p-4">2. 設定VS Code顯示語言為中文(點選左邊橘色延伸模組並在黃色搜尋方塊輸入chinese language)後，選擇繁體中文並選install進行安裝，安裝後軟體會要求重啟。</h5>
+        <h5 class="text-dark p-4">2. 設定VS Code顯示語言為中文(點選左邊橘色延伸模組並在黃色搜尋方塊輸入chinese language)後，選擇中文(繁體)並選install進行安裝，圖片顯示已安裝符號，安裝後軟體會要求重啟，重啟後選單命令會改為中文。</h5>
         <p class="px-3">
           <img src="imgs/intro/soft-2.png" width="60%"/>
         </p>
-        <h5 class="text-dark p-4">3. 下載最新版本<a href="https://www.python.org/downloads/" target="_blank">Python</a>並以系統管理員權限執行安裝。</h5>
+        <h5 class="text-dark p-4">3. 下載最新版本<a href="https://www.python.org/downloads/" target="_blank">Python</a>，點選下載安裝程式並按滑鼠右鍵，選擇以系統管理員權限執行安裝，安裝過程請一直選下一步直到完成。</h5>
         <p class="px-3">
           <img src="imgs/intro/soft-3.png" width="60%"/>
         </p>
-        <h5 class="text-dark p-4">4. 安裝VS Code Python延伸模組</h5>
-        <p class="px-3">
-          <img src="imgs/intro/soft-4.png" width="60%"/>
-        </p>
-        <h5 class="text-dark p-4">5. 驗證Python安裝成功(開啟命令提示字元視窗並輸入 py -3 --version)，會顯示安裝Python版本</h5>
+        <h5 class="text-dark p-4">4. 驗證Python是否安裝成功(請點選鍵盤 視窗符號按鈕 與 X ，開啟命令提示字元視窗並輸入 py -3 --version)，如果有顯示安裝Python版本如下圖，則表示安裝成功，可繼續步驟5，否則請回到步驟3重新安裝Python。</h5>
         <p class="px-3">
           <img src="imgs/intro/soft-5.png" width="60%"/>
         </p>
-        <h5 class="text-dark p-4">6. 使用VS Code 檔案-開啟資料夾 開啟檔案位置資料夾(例python_workspace)</h5>
-        <h5 class="text-dark p-4">7. 設定Python執行環境，選擇 檢視-命令選擇區 後，在命令選擇區輸入 Python: Select Interpreter ，選擇 Python:選擇直譯器 (如第一張圖)，接下來選擇安裝版本Python((如第二張圖)</h5>
+        <h5 class="text-dark p-4">5. 安裝VS Code Python延伸模組，請注意安裝VS Code Python延伸模組之前，請先確認步驟4 Python安裝成功。</h5>
+        <p class="px-3">
+          <img src="imgs/intro/soft-4.png" width="60%"/>
+        </p>
+        
+        <h5 class="text-dark p-4">6. 開啟VS Code並使用 檔案-開啟資料夾 選擇Python程式檔案位置資料夾(例python_workspace)</h5>
+        <h5 class="text-dark p-4">7. 設定Python執行環境，選擇 檢視-命令選擇區 後，在命令選擇區輸入 Python: Select Interpreter ，選擇 Python:選擇直譯器 (如第一張圖)，之後來選擇自己安裝版本Python位置(如第二張圖)，這個步驟設定當VS Code要執行Python程式時，設定安裝Python直譯程式的位置。</h5>
         <p class="px-3">
           <img src="imgs/intro/soft-6.png" width="60%"/><br/><br/>
           <img src="imgs/intro/soft-7.png" width="60%"/>
         </p>
-        <h5 class="text-dark p-4">8. 開新檔案，輸入如圖程式後，將檔案存成 hello.py ，點選圖右邊執行，會看到如圖下方結果</h5>
+        <h5 class="text-dark p-4">8. 開新檔案，將檔案存成 hello.py，輸入如圖程式後 ，點選圖右邊執行，會看到如圖下方結果</h5>
         <p class="px-3">
           <img src="imgs/intro/soft-8.png" width="60%"/>
         </p>
-        <h5 class="text-dark p-4">9. 設定程式除錯，請選擇 執行-啟動偵錯 後(如第一張圖)，接下來會讓使用者選偵錯檔案類型，請選擇 Python檔案 (如第二張圖)，之後設定中斷點(如第三張圖黃色框)與選擇在終端機執行Python檔案(如第三張圖紅色框)後，就可以點選執行並偵錯(如第四張圖)。請注意：偵錯僅需設定做一次。</h5>
+        <h5 class="text-dark p-4">9. 設定程式除錯，請選擇 執行-啟動偵錯 後(如第一張圖)，接下來會讓使用者選偵錯檔案類型，請選擇 Python檔案 (如第二張圖)，之後設定中斷點(如第三張圖黃色框)與選擇在終端機執行Python檔案(如第三張圖紅色框)後，就可以點選執行並偵錯(如第四張圖)。請注意：偵錯設定僅需做一次。</h5>
         <p class="px-3">
           <img src="imgs/intro/soft-9.png" width="60%"/><br/><br/>
           <img src="imgs/intro/soft-10.png" width="60%"/><br/><br/>

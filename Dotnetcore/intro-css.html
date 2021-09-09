@@ -291,7 +291,7 @@
   &lt;/div&gt;
 &lt;/body&gt;
             </code></pre>
-            <p>介紹CSS對象設定後，接下來我們將簡述CSS屬性設定，這裡僅涵蓋通用屬性顏色(<code style="color:#f00">color</code>)、字型(<code style="color:#f00">font</code>)、邊界與內聚(<code style="color:#f00">margin、padding</code>)、邊框(<code style="color:#f00">border</code>)、對齊(<code style="color:#f00">align</code>)與寬與高(<code style="color:#f00">width、height</code>)，其他樣式屬性請參考<a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS</a>。</p>            
+            <p>介紹CSS對象設定後，接下來我們將簡述CSS屬性設定，這裡僅涵蓋通用屬性顏色(<code style="color:#f00">color</code>)、字型(<code style="color:#f00">font</code>)、邊界與內距(<code style="color:#f00">margin、padding</code>)、邊框(<code style="color:#f00">border</code>)、對齊(<code style="color:#f00">align</code>)與寬與高(<code style="color:#f00">width、height</code>)，其他樣式屬性請參考<a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS</a>。</p>            
         </div>
 
         <div class="px-3">
@@ -348,7 +348,7 @@
           </h4><p></p>
             <pre><code>
 &lt;body&gt;
-  &lt;div style="width:200px;height:200px;background-color:#0f0;&gt;
+  &lt;div style="width:200px;height:200px;background-color:#0f0;"&gt;
   &lt;/div&gt;
 &lt;/body&gt;
             </code></pre>     
@@ -363,30 +363,11 @@
           </h4><p></p>
             <pre><code>
 &lt;body&gt;
-  &lt;div style="width:200px;height:200px;background-color:#f00;&gt;
+  &lt;div style="width:200px;height:200px;background-color:#f00;"&gt;
   &lt;/div&gt;
-  &lt;div style="width:200px;height:200px;background-color:#0f0;&gt;
+  &lt;div style="width:200px;height:200px;background-color:#0f0;"&gt;
   &lt;/div&gt;
-  &lt;div style="width:200px;height:200px;background-color:#00f;&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-            </code></pre>     
-        </div>
-
-        <div class="px-3">
-          <h5>CSS屬性設定-邊框</h5>
-          <p>CSS字型邊框(<code style="color:#f00">border</code>)用於設定邊框，設定方式為 <code style="color:#f00">邊框屬性: 邊框粗細 邊框顏色 邊框樣式</code> ，粗細設定與自性大小設定相同，邊框顏色與顏色設定相同，邊框樣式包含圓點(<code style="color:#f00">dotted</code>)、虛線(<code style="color:#f00">dashed</code>)、實線(<code style="color:#f00">solid</code>)與雙線(<code style="color:#f00">double</code>)，邊框屬性包含上(<code style="color:#f00">border-top</code>)、下(<code style="color:#f00">border-bottom</code>)、左(<code style="color:#f00">border-left</code>)、右(<code style="color:#f00">border-right</code>)，如果要同時設定4邊邊框可以用 <code style="color:#f00">border</code> 來進行設定。圓角邊框會搭配border-radius屬性設定4個角的半徑值大小。
-          </p>
-          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
-            練習：請將下列網頁第一個div方框設綠色、兩個像素點、實線邊框，第二個div方框設紅色、兩個像素點、30像素點圓角邊框，第三個div方框設黃色、兩個像素點、圓形邊框。
-          </h4><p></p>
-            <pre><code>
-&lt;body&gt;
-  &lt;div style="width:200px;height:200px;background-color:#f00;&gt;
-  &lt;/div&gt;
-  &lt;div style="width:200px;height:200px;background-color:#0f0;&gt;
-  &lt;/div&gt;
-  &lt;div style="width:200px;height:200px;background-color:#00f;&gt;
+  &lt;div style="width:200px;height:200px;background-color:#00f;"&gt;
   &lt;/div&gt;
 &lt;/body&gt;
             </code></pre>     
@@ -436,6 +417,25 @@
   &lt;img src="imgs/introhtml/imgbutton.png" style="position:absolute;right:20px;bottom:20px;"&gt;
 &lt;/div&gt;
           </code></pre>    
+        </div>
+
+        <div class="px-3">
+          <h5>CSS屬性設定-寬與高</h5>
+          <p>CSS寬(<code style="color:#f00">width</code>)用於設定寬度，常用寬度大小包含像素點(px)、相對父容器大小(%)與視窗寬度(vw, 1vw代表1%視窗寬度)，請注意設定視窗寬度距響應(responsive)效果。高度設定同寬度。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請自行下載任一圖片，將圖片至於第一個div方框中並設寬200px，將圖片至於第二個div方框中並設寬為50%，將圖片至於第三個div方框中並設寬為50vw。
+          </h4><p></p>
+            <pre><code>
+&lt;body&gt;
+  &lt;div style="width:400px;height:400px;background-color:#f00;"&gt;
+  &lt;/div&gt;
+  &lt;div style="width:200px;height:200px;background-color:#0f0;"&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>     
         </div>
 
       </div>
