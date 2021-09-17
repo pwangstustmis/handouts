@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網頁程式設計</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">程式設計(一)<br/>Python</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">程式語言簡介與軟體安裝</a></span>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">Python Basics</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="basics.html">Python語法、變數、資料類型與運算子</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="datatypefunctions.html">資料類型操作</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">條件與迴圈</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">函數、lambda函數與模組</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">物件、類別</a></li>
+            </ul>
+          </div>
+        </li>     
+        
+        <li href="#" class="nav-link">
+          <i class="fas fa-file"></i>
+          <span class="mx-2">第一個專案</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Python Basics</li>
+          <li class="breadcrumb-item">資料類型操作</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">資料類型操作</h3>
+        <div class="px-3">
+          <p>
+              了解變數資料類型之後，接下來介紹資料類型對應操作，透過這些操作可加速程式開發，各項操作將依照資料類型進行介紹。</p>
+        </div>
+        
+        <div class="px-3">
+          <h5>文字類型操作</h5>
+          <p>
+            文字在Python以萬國碼(Unicode)方式儲存，儲存方式類似清單，因此可利用字元位置取得字串內容，同時支援 in 運算自，請注意字串長度函數為 <code style="color:#f00">len()</code>。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請設定變數 school 值為 南臺科技大學，變數 dept 值為 資訊管理系，請先印出變數school包含字數，之後請將變數school中 南臺 與變數dept中 資管 取出並合併至變數 x。
+          </h4><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請設定變數 school 值為 南臺科技大學，請利用 in 運算子判斷 變數 school 是否包含 科。
+          </h4><p></p> 
+        </div>
+
+        <div class="px-3">
+          <h5>文字類型操作-切割(slicing)</h5>
+          <p>
+            文字類型可藉由 <code style="color:#f00">:</code> 取得文字部分內容，切割方式包含 <code style="color:#f00">[:]、[開始位置:]、[:結束位置]、[開始位置:結束位置]、[開始位置:結束位置:間距值]</code> ，分別代表 全部、開始位置之後、從頭到結束位置、開始到結束位置、開始到結束位置有間距。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請設定變數 school 值為 南臺科技大學，請利用文字切割印出 南臺科技大學、科技大學、南臺科技、臺科技、南科大。
+          </h4><p></p>
+          <h5>文字類型操作-修改函數</h5>
+          <p>
+            文字類型修改函數包含 <code style="color:#f00">upper()、lower()、strip()、replace(原始字串,新字串,取代次數)、split(分割符號,分割次數)</code> 等，分別代表 轉大寫、轉小寫、去掉頭尾空白、更換、分割，請注意字串分割函數會傳回字串清單，文字變數呼叫函數方式為 <code style="color:#f00">文字變數.函數()</code>。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請設定變數 school 值為 "Southerm Taiwan University of Science and Technology"，請印出 全部大寫變數 school、全部小寫變數 school、請將變數 school中 Southerm 替換為 Southern、請將變數 school按照空白進行切割，並印出切割結果中 University。
+          </h4><p></p>
+          <h5>文字類型操作-格式化輸出</h5>
+          <p>
+            文字類型 <code style="color:#f00">format()</code> 函數用於設定格式化輸出，輸出變數順序設定有三種：
+          </p>
+          <ul>
+            <li><code style="color:#f00">"{}".format(輸出值)</code>：其中"{}"代表順序對應輸出值，例如 <code style="color:#f00">print("南臺 {}, 資管 {}".format(1,2))</code> 會輸出 南臺 1, 資管 2
+            </li>
+            <li><code style="color:#f00">"{輸出值位置}".format(輸出值)</code>：其中"{輸出值位置}"代表輸出值位置，透過這種方式不用像第一種順序輸出，使用者可以透過輸出值位置指定輸出值，請注意，起始位置從0開始，例如 <code style="color:#f00">print("南臺 {1}, 資管 {0}".format(1,2))</code> 會輸出 南臺 2, 資管 1
+            </li>
+            <li><code style="color:#f00">"{輸出變數名稱}".format(變數名稱)</code>：透過這種方式指定變數輸出位置，例如 <code style="color:#f00">print("南臺 {x}, 資管 {y}".format(y=1,x=2))</code> 會輸出 南臺 2, 資管 1
+            </li>
+          </ul>
+          <p>
+              設定輸出除指定輸出位置之外，另外可以指定輸出格式分別為：
+          </p>
+          <ul>
+            <li><code style="color:#f00">"{:&lt;位數}".format(輸出值)</code>：其指定位數輸出並靠左，例如 <code style="color:#f00">print("{:&lt;8}".format("abc"))</code> 會輸出8字元長度並靠左abc
+            </li>
+            <li><code style="color:#f00">"{:&gt;位數}".format(輸出值)</code>：其指定位數輸出並靠右，例如 <code style="color:#f00">print("{:&gt;8}".format("abc"))</code> 會輸出8字元長度並靠右abc
+            </li>
+            <li><code style="color:#f00">"{:^位數}".format(輸出值)</code>：其指定位數輸出並置中，例如 <code style="color:#f00">print("{:^8}".format("abc"))</code> 會輸出8字元長度並置中abc
+            </li>
+            <li><code style="color:#f00">"{:+位數}".format(輸出值)</code>：其指定位數輸出並對數字最左邊加上正負號，例如 <code style="color:#f00">print("{:=8}".format(123))</code> 會輸出8字元長度+123
+            </li>
+            <li><code style="color:#f00">"{:位數,}".format(輸出值)</code>：對數字輸出位數長度三位加上一個逗點，例如 <code style="color:#f00">print("{:6,}".format(12345))</code> 會12,345
+            </li>
+            <li><code style="color:#f00">"{:位數d}".format(輸出值)</code>：對數字輸出位數長度整數，例如 <code style="color:#f00">print("{:6d}".format(12345))</code> 會輸出 12345
+            </li>
+            <li><code style="color:#f00">"{:總位數.小數位f}".format(輸出值)</code>：對符點數輸出總位數長度的小數位浮點數，例如 <code style="color:#f00">print("{:8.2f}".format(12345))</code> 會輸出12345.00
+            </li>
+          </ul>
+          <h5>文字類型操作-跳脫浮號 <code style="color:#f00">\</code></h5>
+          <p>
+            跳脫浮號 <code style="color:#f00">\n</code> 代表跳行。
+          </p>
+        </div>
+
+        <div class="px-3">
+          <h5>數字類型操作</h5>
+          <p>
+            數字類型包含 <code style="color:#f00">int、float、complex</code>，類型操作主要為類型轉換。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請設定變數 x 值為 "1234"，請印出變數 x 前兩個數字加上後兩個數字答案。
+          </h4><p></p>
+        </div>
+
+        <div class="px-3">
+          <h5>順序類型操作-清單</h5>
+          <p>
+            清單類型操作包含：
+          </p>
+          <ul>
+            <li>
+              取得清單值：請參考文字操作的切割，請注意：清單位置值如為負數則代表位置值從最後開始計算，-1代表最後位置，-2代表倒數第二個。
+            </li>
+            <li>
+              修改清單值：可利用位置值修改單一清單值或參考文字操作的切割修改一個範圍的清單值。
+            </li>
+            <li>
+              新增清單值：可利用<code style="color:#f00">append(清單值)、insert(位置,清單值)</code> 新增資料。
+            </li>
+            <li>
+              刪除清單值：可利用<code style="color:#f00">remove(清單值)、pop()、pop(位置值)、del 清單變數[位置值]、del 清單變數、清單變數.clear()</code> 來刪除資料，分別代表 刪除清單值、刪除最後一個、刪除位置值清單項目、刪除位置值清單項目、移除整個清單變數、刪除清單變數內容(清單變數仍然存在)。
+            </li>
+          </ul>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請設定變數 x 值為 "1234"，請印出變數 x 前兩個數字加上後兩個數字答案。
+          </h4><p></p>
+        </div>
+
+        
+
+        
+        
+
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>
