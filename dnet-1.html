@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第一個MVC專案</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">網頁程式設計<br/>ASP.Net Core</p>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">課程簡介</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="index.html">網頁應用架構</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">HTML</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">CSS</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">JavaScript</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic2" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic2">
+            <span class="mx-2">.NET Core-MVC</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic2">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="dnet-1.html">第一個MVC專案</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="dnet-2.html">資料傳遞-控制器到檢視</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">控制器(COntroller)</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">檢視(View)</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">資料模型</a></li>
+            </ul>
+          </div>              
+        </li>      
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">.NET Core-MVC</li>
+          <li class="breadcrumb-item">第一個MVC專案</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">第一個MVC專案</h3>
+        <p class="px-3">
+            模型(Model)、檢視(View)、控制器(Controller)專案架構會將應用程式分成三個主要的元件群組：模型、檢視與控制器。這種架構有助於達成程式關注分離，設計者開發時，僅需專注於現在群組：檢視專注於使用者介面處理、控制器專注於輸入邏輯處理、模型則專注於商務資料邏輯處理。MVC架構可建立比傳統整合型應用程式更可測試且更易於更新的應用程式。MVC 架構的應用程式包含：
+        </p>
+        <div class="px-3">
+            <ul>
+                <li>
+                    模型(Model)：代表應用程式資料的類別。模型類別使用驗證邏輯執行商務資料規則。通常模型物件會用於資料庫中擷取並儲存模型狀態。
+                </li>
+                <li>
+                    檢視(View)：檢視包含顯示應用程式之使用者介面。 一般而言，他會用於顯示模型資料。
+                </li>
+                <li>
+                    控制器(Controller)為程式類別用於處理瀏覽器要求、取出模型資料與呼叫回傳的檢視元件。
+                </li>
+            </ul>
+        </div>
+              
+        <div class="px-3">
+          <h5>第一個專案</h5>
+          <ul>
+              <li>請開啟Visual Studio(至少為2019版並更新至最新版本)後選擇建立新的專案</li>
+          </ul>
+          <p>
+              <img src="imgs/dnet-1/pic1.png" width="70%">
+          </p>
+          <ul>
+            <li>請選擇 ASP.NET Core Web應用程式(Model-View-Controller)</li>
+          </ul>
+          <p>
+              <img src="imgs/dnet-1/pic2.png" width="70%">
+          </p>
+          <ul>
+            <li>設定專案名稱及位置</li>
+          </ul>
+          <p>
+              <img src="imgs/dnet-1/pic3.png" width="70%">
+          </p>
+          <ul>
+            <li>目標Framework請設定 .NET 5.0並取消勾選HTTPS後按建立</li>
+          </ul>
+          <p>
+              <img src="imgs/dnet-1/pic4.png" width="70%">
+          </p>                
+        </div>
+
+        <div class="px-3">
+          <h5>專案架構</h5>
+          <p>
+            <img src="imgs/dnet-1/pic5.png" width="40%">
+        </p>
+          <p>
+            要開發MVC專案，首先我們必須了解專案中檔案夾資料夾的意義及目的：
+          </p>
+          <ul>
+            <li><code style="color:#f00">Connected Services</code>：用於串接後端HTTP API服務。</li>
+            <li><code style="color:#f00">Properties檔案夾</code>：裡面包含launchSettings.json檔用於描述專案如何啟動，其中包含網頁伺服器(IIS)設定、瀏覽器是否開啟及環境變數等。</li>
+            <li><code style="color:#f00">wwwroot檔案夾</code>：用於儲存靜態資源如靜態網頁(.html)、CSS程式庫、JavaScript程式庫、字型、圖片、影片、聲音等，<code style="color:#f00">請注意：將靜態資源置於wwwroot檔案夾之外是無法被取得</code>。</li>
+            <li><code style="color:#f00">相依性檔案夾</code>：用於儲存專案會用到動態連結程式庫。</li>
+            <li><code style="color:#f00">Controllers、Models、Views檔案夾</code>：用於儲存專案中控制器、模型與檢視，<code style="color:#f00">請注意：每新增一個控制器，專案會自動在檢視中新增對應控制器名稱的檢視資料夾</code>。</li>
+            <li><code style="color:#f00">appsettings.json檔</code>：用於儲存專案相關的設定如資料庫連接字串等。</li>
+            <li><code style="color:#f00">Program.cs檔</code>：為專案起始類別，一般不會更動，用於呼叫Startup類別。</li>
+            <li><code style="color:#f00">Startup.cs檔</code>：用於設定專案設定服務(ConfigureServices，用來定義應用程式將使用的服務)與組態(Configure，定義每個HTTP要求的處理方式)，組態用於定義處理HTTP要求的中介軟體(藉由app.Use)，最後執行利用app.UseEndPoints。在UseEndPoints中設定路由方式為 <code style="color:#f00">控制器/動作/代入值</code></li>
+          </ul>   
+        </div>
+
+        <div class="px-3">
+          <h5>控制器-Controller</h5>
+          <p>
+            控制器目的是處理使用者互動、使用模型，並在最終選取要呈現之檢視。控制器為一C#類別，包含許多方法，這些方法稱為動作(Action)。新增控制器，請點選方案總管中Controllers後，選滑鼠右鍵，並選擇 <code style="color:#f00">加入-控制器-MVC控制器-空白</code>，控制器名稱第一個字要大寫，系統會自動在控制器名稱加上Controller。每個控制器可包含許多動作，動作用於執行專案中的特定操作，控制器預設動作名稱為Index，使用者可輸入 <code style="color:#f00">http://網站位址/控制器/動作</code> 來執行控制器中的特定動作。動作宣告為public，並設定傳回值與動作名稱及代入值(如果有)，動作名稱第一個字為大寫。動作傳回值可以是特定類型、IActionResult(包含多種回類型如HTTP狀態、ViewResult、JSON、檢視、轉址等)或ActionResult&lt;傳回類型&gt;，動作中 <code style="color:#f00">return View()</code> 用於傳回該動作對應檢視畫面。<code style="color:#f00">return View()</code>除了呼叫預設檢視頁面之外，還可使用 <code style="color:#f00">return View("其他檢視名稱")、return View("其他檢視名稱",傳送參數物件)</code>。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在HomeController新增一動作名稱為Test、無代入值，傳回 南臺科技大學。
+          </h4><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請新增控制器名稱為Test。
+          </h4><p></p>
+          <p>
+            如果動作包含代入值，使用者可輸入 <code style="color:#f00">http://網站位址/控制器/動作/值1/值2</code> 或 <code style="color:#f00">http://網站位址/控制器/動作?變數1=值1&變數2=值2</code> 來呼叫動作。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請修改控制器Test可帶入兩個文字變數v1及v2，執行時請中斷控制器Test並檢視是否有代入值。
+          </h4><p></p>           
+        </div>
+        
+        <div class="px-3">
+          <h5>檢視-View</h5>
+          <p>
+            檢視用於顯示資訊或提供與使用者互動的介面，檢視會儲存於專案 <code style="color:#f00">Views</code> 資料夾，通常檢視會依照控制器來區分，不同控制器的檢視，儲存於不同資料夾中，每個控制器的動作可以有其對應檢視頁面，檢視頁面的副檔名為 <code style="color:#f00">.cshtml</code>，內容包含前端網頁設定及ASP.NET特定後端(Razor)或前端(Blazor)控制語言，不同於JavaScript，ASP.NET特定後端(Razor)或前端(Blazor)控制語言使用C#語法。<br/>要新增動作對應的檢視頁面，請點選動作名稱，按下滑鼠右鍵選擇 <code style="color:#f00">新增檢視-Razor檢視</code> 並使用預設設定。請注意在檢視頁面需使用 <code style="color:#f00">@</code> 符號才能執行C#命令，如需放置多行C#命令時，請將命令至於 <code style="color:#f00">@{   }</code>中。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請對HomeController動作Test新增檢視，並在檢視畫面輸入 南臺科技大學。
+          </h4><p></p>             
+        </div>
+
+        <div class="px-3">
+          <h5>模型-Model</h5>
+          <p>
+            模型為C#類別用於表示與處理專案所需資料，模型會儲存於專案 <code style="color:#f00">Models</code> 資料夾，要新增模型請點選 <code style="color:#f00">Models</code> 資料夾，按下滑鼠右鍵選擇 <code style="color:#f00">加入-新增項目-類別</code> 並設定類別名稱，請注意類別名稱第一個字大寫。類別屬性宣告為 <code style="color:#f00">public</code>，並加入資料類別與屬性名稱，並設定 <code style="color:#f00">{get; set;}</code> 來設定資料屬性可讀取或可修改。在檢視頁面中要使用模型中類別需要有兩個步驟：
+          </p>
+          <ul>
+            <li>在檢視頁面開始宣告 <code style="color:#f00"></code>@model 模型所在命名空間</code></li>
+            <li>在頁面要顯示時，使用 <code style="color:#f00">@Model.欄位名稱</code> ，請注意取用傳遞物件 <code style="color:#f00">@Model</code> M要用大寫，宣告 m要用小寫。</li>
+          </ul>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在Models新增Student.cs類別，包含 StudentId、StudentClass與SrudentName。
+          </h4><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在HomeController控制器中Index動作新增上一練習Student物件，並對 StudentId、StudentClass與SrudentName 設定值，之後將Student物件傳至Index動作對應畫面並顯示。
+          </h4><p></p>
+                     
+        </div>
+
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>

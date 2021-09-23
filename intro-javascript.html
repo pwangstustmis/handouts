@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網頁程式設計</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">網頁程式設計<br/>ASP.Net Core</p>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">課程簡介</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="index.html">網頁應用架構</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">HTML</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">CSS</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">JavaScript</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic2" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic2">
+            <span class="mx-2">.NET Core-MVC</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic2">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="dnet-1.html">第一個MVC專案</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="dnet-2.html">資料傳遞-控制器到檢視</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">控制器(COntroller)</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">檢視(View)</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">資料模型</a></li>
+            </ul>
+          </div>              
+        </li>      
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">課程簡介</li>
+          <li class="breadcrumb-item">JavaScript簡介</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">JavaScript簡介</h3>
+        <p class="px-3">
+          JavaScript大概是全使用最為普遍語言，最常用於前端網頁控制包含事件偵測、動態網頁設定、非同步傳輸(fetch API)與JSON處理。這裡只簡單介紹如何使用與後端網頁相關的JavaScipt內容，詳細的介紹，請參考<a href="https://www.w3schools.com/js/default.asp" target="_blank">W3Schools JavaScript</a>。
+        </p>
+        
+        <div class="px-3">
+          <h5>JavaScript設定</h5>
+          <p>JavaScript設定包含行內(inline)、內部(internal)與external(外部)三種定義方式。行內(inline)是指將程式命令設定於HTML標籤事件(onclick、onload、onchange、onmouseover、onmouseout、onkeydown)屬性中，更多事件敘述請參考<a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">HTML DOM Events</a>。設定方式為 <code style="color:#f00">事件名稱="JavaScript程式命令"</code> ，設定可包含多個JavaScipr命令。由於在行內輸入多行非常不方便，因此設計者可使用內部(internal)是將JavaScript程式定義於HTML檔檔頭(head)位置內，並包含於HTML script標籤中，設定方式為 <code style="color:#f00">&lt;script&gt; JavaScript程式或自訂函數&lt;/script&gt;</code> 。external(外部)是將JavaScript程式存於副檔名為 .js 的獨立檔案，並在網頁檔頭(head)位置內利用HTML script標籤載入對應的樣式檔。接下來以行內(inline)、內部(internal)與external(外部)三種定義方式來設定按鈕點選時跳出警告視窗。</p>
+          <div>
+            <button onclick="alert('Hello');">點選跳出Hello</button>
+          </div>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">行內(inline)設定：</div>
+          <pre><code>
+&lt;button onclick="alert('Hello');"&gt;點選跳出Hello&lt;/button&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">內部(internal)設定：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;script&gt;
+    function showhello() {
+      alert("hello");
+    }
+  &lt;/script&gt;
+&lt;/head&gt;
+...
+&lt;button onclick="showhello();"&gt;點選跳出Hello&lt;/button&gt;
+          </code></pre>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">外部(external)設定，將內部設定中程式不包含script標籤存於外部檔案假設為myfunctions.js：</div>
+          <pre><code>
+&lt;head&gt;
+  &lt;script src="myfunctions.js""&gt;&lt;/script&gt;
+&lt;/head&gt;
+...
+&lt;button onclick="showhello();"&gt;點選跳出Hello&lt;/button&gt;
+          </code></pre>     
+        </div>
+
+        <div class="px-3">
+          <h5>動態網頁設定</h5>
+          <p>JavaScript可藉由getElementById、getElementsByClassName、getElementsByTagName、getElementsByName與querySelector等方法選取網頁中標籤對象，取得對象後，可改變屬性內容、標籤網頁內容、樣式等。接下來以實例作簡單介紹。</p>
+          <div>
+            <button onclick="document.getElementById('lightbulb').src='imgs/introjavascript/bulboff.gif';">關燈</button>
+            <img src="imgs/introjavascript/bulboff.gif" id="lightbulb">
+            <button onclick="document.getElementById('lightbulb').src='imgs/introjavascript/bulbon.gif';">開燈</button>
+          </div>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">改變圖片來源屬性(src)值行：</div>
+          <pre><code>
+  &lt;button onclick="document.getElementById('lightbulb').src='imgs/introjavascript/bulboff.gif';"&gt;關燈&lt;/button&gt;
+  &lt;img src="imgs/introjavascript/bulboff.gif" id="lightbulb"&gt;
+  &lt;button onclick="document.getElementById('lightbulb').src='imgs/introjavascript/bulbon.gif';"&gt;開燈&lt;/button&gt;
+          </code></pre>
+          <div>
+            <label for="text1">文字方塊1</label>
+            <input id="text1"><p></p>
+            <label for="text2">文字方塊2</label>
+            <input id="text2"><p></p>
+            <button onclick="document.getElementById('text2').value=document.getElementById('text1').value;">複製</button>
+          </div>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">複製文字方塊1值到文字方塊2：</div>
+          <pre><code>
+  &lt;label for="text1"&gt;文字方塊1&lt;/label&gt;
+  &lt;input id="text1"&gt;&lt;p&gt;&gt;&lt;/p&gt;
+  &lt;label for="text2"&gt;文字方塊2&lt;/label&gt;
+  &lt;input id="text2"&gt;&lt;p&gt;&gt;&lt;/p&gt;
+  &lt;button onclick="document.getElementById('text2').value=document.getElementById('text1').value;"&gt;複製&lt;/button&gt;
+          </code></pre>
+          <div>
+            <p onclick="document.getElementById('myp1').innerHTML='資訊管理系';" id="myp1">南臺科技大學(點選後改變為資訊管理系)</p>
+          </div>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">標籤內容改變(innerHTML)：</div>
+          <pre><code>
+  &lt;p onclick="document.getElementById('myp1').innerHTML='資訊管理系';" id="myp1"&gt;南臺科技大學(點選後改變為資訊管理系)&lt;/p&gt;
+          </code></pre>
+          <div>
+            <p onclick="document.getElementById('myp2').style.color='#f00';" id="myp2">南臺科技大學資訊管理系(點選後改變為紅色)</p>
+          </div>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">改變樣式(style)：</div>
+          <pre><code>
+  &lt;p onclick="document.getElementById('myp2').style.color='#f00';" id="myp2"&gt;南臺科技大學資訊管理系(點選後改變為紅色)&lt;/p&gt;
+          </code></pre>               
+        </div>
+
+        <div class="px-3">
+          <h5>非同步傳輸(fetch API)</h5>
+          <p>fetch使用非同步傳輸取得資料，常用於取得後端資料。使用方式如下：</p>
+          <pre><code>
+fetch("服務或檔案位置")
+.then(response=>response.json())
+.then(data=>console.log(data))
+.catch(error=>console.log(error));
+          </code></pre>
+          <script>
+            function fetchdata() {
+              fetch("https://opengov.tainan.gov.tw/OpenApi/api/service/GetJsonLd/67f650ba-6aea-4cbf-9117-79b47234c682")
+              .then(response=>response.json())
+              .then(data=>document.getElementById("opendata").innerHTML=JSON.stringify(data))
+              .catch(error=>alert(error));
+            }
+          </script>
+          <p>
+            以臺南市國中小校園開放時間開放資料(https://opengov.tainan.gov.tw/OpenApi/api/service/GetJsonLd/67f650ba-6aea-4cbf-9117-79b47234c682)為例：
+            <button onclick="fetchdata()">取得資料</button>
+          </p>          
+          <div id="opendata" style="width:700px; height:300px;border:#0f0 1px solid;overflow-y: scroll; word-wrap: break-word;">
+          </div>
+
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">臺南市國中小校園開放時間開放資料：</div>
+          <pre><code>
+  &lt;script&gt;
+    function fetchdata() {
+      fetch("https://opengov.tainan.gov.tw/OpenApi/api/service/GetJsonLd/67f650ba-6aea-4cbf-9117-79b47234c682")
+      .then(response=>response.json())
+      .then(data=>document.getElementById("opendata").innerHTML=JSON.stringify(data))
+      .catch(error=>alert(error));
+    }
+  &lt;/script&gt;
+  &lt;button onclick="fetchdata()"&gt;取得資料&lt;/button&gt;
+  &lt;div id="opendata" style="width:700px; height:300px;border:#0f0 1px solid;overflow-y: scroll; word-wrap: break-word;"&gt;&lt;/div&gt;
+          </code></pre>                      
+        </div>
+
+        <div class="px-3">
+          <h5>JSON處理</h5>
+          <p>JSON(JavaScript Object Notation)代表JavaScript物件表示，他為網路常用輕量資料轉換格式，定義方式如下：</p>
+          <pre><code>
+{"自訂名稱1":值1, "自訂名稱2":值2}
+          </code></pre>
+          <p>
+            可以包含許多自訂名稱與對應值，值如果為文字須置於雙引號或單引號之間，參照JSON值則使用 <code style="color:#f00">變數名稱.自訂名稱</code> 即可。
+          </p>
+          <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">取得JSON物件city值</div>
+          <pre><code>
+  &lt;script&gt;
+    let t={"city":"台南市","mayor":"黃偉哲"};
+    alert(t.city);
+  &lt;/script&gt;
+          </code></pre>
+          <p>
+            伺服器傳來的JSON資料是以自船的方式傳遞，因此必須使用 <code style="color:#f00">JSON.parse(文字格式JSON資料)</code> 將它轉換成JSON物件，同樣的我們會使用 <code style="color:#f00">JSON.stringify(JSON物件)</code> 將JSON物件轉為文字格式後，再傳給伺服器。
+          </p>                    
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>
