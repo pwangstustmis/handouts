@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>網頁程式設計</title>
+    <title>第一個MVC專案</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css" />
@@ -62,59 +62,62 @@
         </li>      
     </div>
 
+
     <!-- Main Wrapper -->
     <div class="p-2 my-container active-cont">
       <!-- Breadcrumb -->
       <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
         <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">課程簡介</li>
-          <li class="breadcrumb-item active">網頁應用架構</li>
+          <li class="breadcrumb-item">.NET Core-MVC</li>
+          <li class="breadcrumb-item">資料傳遞-控制器到檢視</li>
         </ol>
       </div>
       <!--End Top Nav -->
 
       <!-- main page -->
       <div style="margin-top:50px;">
-        <h3 class="text-dark p-3">網頁應用架構</h3>
-        <p class="text-center">
-          <img src="imgs/introduction/intro-1.png"/>
-        </p>
+        <h3 class="text-dark p-3">資料傳遞-控制器到檢視</h3>
         <p class="px-3">
-          網頁應用開發可區分為前端與後端，前端開發也稱為客戶端開發，如上圖左半部，網站或網頁應用程式利用HTML、CSS與JavaScript進行設計，讓便用者可以直接查看它們並與之互動。後端開發主要著重於網站的工作方式，提供處理程序的功能和邏輯，使用的技術內容不會被用戶直接看到，後端技術是伺服器，應用程序和資料庫的組合，後端程式會編寫API或與資料庫互動的程式、建立程式庫、處理商業流程和資料架構等，常用的後端語言包含Java、PHP、.NET、Ruby、Python、SQL、JavaScript等。雖然後端開發著重於網站的工作方式，但是仍須借助前端設計來呈現後端處理的結果，因此後端開發仍須具有前端開發的能力。
+            了解模型(Model)、檢視(View)、控制器(Controller)基本架構，接下來將介紹如何將控制器取得資料傳遞至檢視畫面中，要將資料從控制器傳遞至檢視畫面中有許多方式，這裡首先介紹兩種弱型態的傳遞方式 <code style="color:#f00">ViewData、ViewBag與TempData</code>。
         </p>
-        <p class="px-3">
-          課程將介紹ASP.NET Core框架，ASP.NET Core是一個免費的開源 Web框架並繼承ASP.NET，它由微軟負責開發並維護。ASP.NET Core是一個模組化框架，可在完整的.NET Framework、Windows和跨平台 .NET 上運行。不同於微軟ASP.NET架構，ASP.NET Core最大的優勢為開源與誇平台(支援Windows、MacOS與Linux)，而ASP.NET僅用於開發Windows平台Web應用。
-        </p>
-        <h3 class="text-dark p-3">軟體安裝</h3>
-        <p class="px-3">
-          課程使用微軟Visual Studio community 2019，使用者可至<a href="https://visualstudio.microsoft.com/zh-hant/vs/community/" target="_blank">官網下載</a>，軟體下載與安裝步驟如下：
-        </p>
-        <h5 class="text-dark p-4">1. 下載軟體-點選下載Visual Studio</h5>
-        <p class="px-3">
-          <img src="imgs/introduction/soft-1.png" width="90%"/>
-        </p>
-        <h5 class="text-dark p-4">2. 安裝軟體-下載後執行並點選繼續</h5>
-        <p class="px-3">
-          <img src="imgs/introduction/soft-2.png" width="90%"/>
-        </p>
-        <h5 class="text-dark p-4">3. 安裝模組-選擇ASP.NET與網頁程式開發、資料儲存與處理後點選安裝</h5>
-        <p class="px-3">
-          <img src="imgs/introduction/soft-3.png" width="90%"/><br/>
-          <img src="imgs/introduction/soft-4.png" width="90%"/>
-        </p>
-        <h5 class="text-dark p-4">4. 安裝.NET-下載後安裝</h5>
-        <p class="px-3">
-          請至<a href="https://dotnet.microsoft.com/download" target="_blank">官網</a>下載對應平台最新版.NET SDK並安裝。<br/>
-          <img src="imgs/introduction/soft-5.png" width="90%"/><br/><br/>
-          <img src="imgs/introduction/soft-6.png" width="90%"/>
-        </p>
-        <h5 class="text-dark p-4">5. 軟體註冊</h5>
-        <p class="px-3">
-          Visual Studio Communinity為免費軟體，但需要註冊才能免除30天試用限制，使用者如有微軟帳號，請直接用微軟帳號登入即可，如果沒有，請自行建立。<br/>
-          <img src="imgs/introduction/soft-7.png" width="90%"/><br/><br/>
-          <img src="imgs/introduction/soft-8.png" width="90%"/>
-        </p>
+              
+        <div class="px-3">
+          <h5>ViewData</h5>
+          <p>
+              ViewData使用名稱與值(<code style="color:#f00">ViewData["名稱"]=值</code>)的定義方式將資料從控制器傳遞至檢視頁面，在檢視頁面需使用 <code style="color:#f00">@</code> 符號將控制器中ViewData值顯示於檢視頁面中，或利用 <code style="color:#f00">@{   }</code> 來執行對應ViewData資料，請注意ViewData除了字串類型外，其他類型都必須經過資料類型轉換。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在HomeController中Index動作新增ViewData變數dept值為 資訊管理系，並在對應檢視畫面顯示ViewData變數dept值。
+          </h4><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在HomeController中Index動作新增ViewData變數income值為 50000，並在對應檢視畫面計算並顯示ViewData變數income * 10 結果。
+          </h4><p></p>   
+        </div>
+        <div class="px-3">
+            <h5>ViewBag</h5>
+            <p>
+                ViewBag使用屬性(<code style="color:#f00">ViewBag.屬性名稱=值</code>)的定義方式將資料從控制器傳遞至檢視頁面，ViewBag支援動態資料類型，所以在檢視頁面取用時不需進行類型轉換。
+            </p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index動作新增ViewBag屬性dept值為 資訊管理系，並在對應檢視畫面顯示ViewData屬性dept值。
+            </h4><p></p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index動作新增ViewBag屬性income值為 50000，並在對應檢視畫面計算並顯示ViewBag屬性income * 10 結果。
+            </h4><p></p>   
+          </div>
+          <div class="px-3">
+            <h5>TempData</h5>
+            <p>
+                TempData使用方式同ViewData，不同的是他的值會在第一次被取得時移除，同時它可用於控制器至檢視或檢視至控制器，同時他也可使用TempData.keep()函數來設定資料簿會被移除。
+            </p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index動作新增TempData變數dept值為 資訊管理系，並在Privacy檢視畫面顯示TempData變數dept值。
+            </h4><p></p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index檢視畫面設定TempData變數income值為 50000，並設定連結執行HomeController中Index動作，請設定中斷檢查Index檢視畫面設定TempData變數income值。
+            </h4><p></p>   
+          </div>
       </div>
     </div>
 

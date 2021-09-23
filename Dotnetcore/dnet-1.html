@@ -13,51 +13,54 @@
 
     <!-- Side-Nav -->
     <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
-        <ul class="nav flex-column text-white w-100">
-          <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
-            <p style="color:rgb(248, 138, 11);font-weight: 700;">網頁程式設計<br/>ASP.Net Core</p>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
-              <span class="mx-2">課程簡介</span>
-              <i class="fas fa-angle-right"></i>
-            </div>
-            <div class="collapse" id="topic1">
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="index.html">網頁應用架構</a></li>
-              </ul>
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="intro-html.html">HTML</a></li>
-              </ul>
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="intro-css.html">CSS</a></li>
-              </ul>
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="intro-javascript.html">JavaScript</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link" href="#topic2" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic2">
-              <span class="mx-2">.NET Core-MVC</span>
-              <i class="fas fa-angle-right"></i>
-            </div>
-            <div class="collapse" id="topic2">
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="dnet-1.html">第一個MVC專案</a></li>
-              </ul>
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="intro-html.html">控制器(COntroller)</a></li>
-              </ul>
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="intro-css.html">檢視(View)</a></li>
-              </ul>
-              <ul>
-                <li class="menuitem"><a class="nav-link" href="intro-javascript.html">資料模型</a></li>
-              </ul>
-            </div>              
-          </li>      
-      </div>
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">網頁程式設計<br/>ASP.Net Core</p>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">課程簡介</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="index.html">網頁應用架構</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">HTML</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">CSS</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">JavaScript</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic2" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic2">
+            <span class="mx-2">.NET Core-MVC</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic2">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="dnet-1.html">第一個MVC專案</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="dnet-2.html">資料傳遞-控制器到檢視</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-html.html">控制器(COntroller)</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-css.html">檢視(View)</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="intro-javascript.html">資料模型</a></li>
+            </ul>
+          </div>              
+        </li>      
+    </div>
 
 
     <!-- Main Wrapper -->
@@ -150,15 +153,19 @@
           </h4><p></p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：請新增控制器名稱為Test。
-          </h4><p></p>             
+          </h4><p></p>
+          <p>
+            如果動作包含代入值，使用者可輸入 <code style="color:#f00">http://網站位址/控制器/動作/值1/值2</code> 或 <code style="color:#f00">http://網站位址/控制器/動作?變數1=值1&變數2=值2</code> 來呼叫動作。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請修改控制器Test可帶入兩個文字變數v1及v2，執行時請中斷控制器Test並檢視是否有代入值。
+          </h4><p></p>           
         </div>
-        <p>
-          如果動作包含代入值，使用者可輸入 <code style="color:#f00">http://網站位址/控制器/動作/值1/值2</code> 或 <code style="color:#f00">http://網站位址/控制器/動作?變數1=值1&變數2=值2</code> 來呼叫動作。
-        </p>
+        
         <div class="px-3">
           <h5>檢視-View</h5>
           <p>
-            檢視用於顯示資訊或提供與使用者互動的介面，檢視會儲存於專案 <code style="color:#f00">Views</code> 資料夾，通常檢視會依照控制器來區分，每個控制器會有其特定檢視頁面，檢視頁面的副檔名為 <code style="color:#f00">.cshtml</code>，一般檢視頁面會對應至動作名稱，要為動作新增其對應檢視頁面，請點選動作名稱，按下滑鼠右鍵選擇 <code style="color:#f00">新增檢視-Razor檢視</code> 並使用預設設定。請注意檢視頁面為一標準HTML檔。
+            檢視用於顯示資訊或提供與使用者互動的介面，檢視會儲存於專案 <code style="color:#f00">Views</code> 資料夾，通常檢視會依照控制器來區分，不同控制器的檢視，儲存於不同資料夾中，每個控制器的動作可以有其對應檢視頁面，檢視頁面的副檔名為 <code style="color:#f00">.cshtml</code>，內容包含前端網頁設定及ASP.NET特定後端(Razor)或前端(Blazor)控制語言，不同於JavaScript，ASP.NET特定後端(Razor)或前端(Blazor)控制語言使用C#語法。<br/>要新增動作對應的檢視頁面，請點選動作名稱，按下滑鼠右鍵選擇 <code style="color:#f00">新增檢視-Razor檢視</code> 並使用預設設定。請注意在檢視頁面需使用 <code style="color:#f00">@</code> 符號才能執行C#命令，如需放置多行C#命令時，請將命令至於 <code style="color:#f00">@{   }</code>中。
           </p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：請對HomeController動作Test新增檢視，並在檢視畫面輸入 南臺科技大學。
@@ -176,6 +183,9 @@
           </ul>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：請在Models新增Student.cs類別，包含 StudentId、StudentClass與SrudentName。
+          </h4><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在HomeController控制器中Index動作新增上一練習Student物件，並對 StudentId、StudentClass與SrudentName 設定值，之後將Student物件傳至Index動作對應畫面並顯示。
           </h4><p></p>
                      
         </div>
