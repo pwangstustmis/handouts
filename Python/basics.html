@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>網頁程式設計</title>
+    <title>程式設計(一)</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css" />
@@ -70,7 +70,7 @@
         <h3 class="text-dark p-3">Python語法</h3>
         <div class="px-3">
           <p>Python檔案的副檔名為.py，不同於一般語言使用 <code style="color:#f00">{ }</code> 來包含程式區塊，Python使用相同縮排距離表示這些程式屬於同一程式區塊，縮排間距的大小並沒有限制，但是不同的程式區塊最少要間距1個空白。以下圖為例，可以看到程式 <code style="color:#f00">print(msg)</code> 出現紅色底顯標示錯誤，因為 <code style="color:#f00">print(msg)</code> 屬於條件 if 的程式區塊，因此它最少要在 <code style="color:#f00">if</code> 命令之後1個空格以上，而所有屬於 <code style="color:#f00">if</code> 程式區塊均須有相同的間距，Python程式註解在註解文字前加上 <code style="color:#f00">#</code>。</p>
-          <img src="imgs/basics/syntax-1.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-1.png" width="80%"><p></p>
         </div>
         
         <div class="px-3">
@@ -78,7 +78,7 @@
           <p>
             變數用於儲存輸入資料或計算結果，Python變數名稱可由英文字或底線符號(_)開始，同時變數名稱大小寫英文字為不同的變數，不同於強型態語言(所有變數均須事先定義要儲存資料類型)，Python變數可以不須事先宣告儲存類型，同時Python變數資料類型也會隨儲存值而改變(如下圖)，下圖中 <code style="color:#f00">type()</code> 函數用於回傳變數資料類型。雖然Python變數資料類型會隨儲存值而改變，可是使用者還是可以明確設定變數資料類型，如果使用者想要明確設定變數資料類型，可以使用下列的資料類型來定義或進行資料類型轉換(文字性數字轉數字或數字轉文字等)。
           </p>
-          <img src="imgs/basics/syntax-2.png" width="60%"><p></p>   
+          <img src="imgs/basics/syntax-2.png" width="80%"><p></p>   
         </div>
 
         <div class="px-3">
@@ -89,17 +89,17 @@
           <p>
             設定文字類型變數會將文字字串置於雙引號或單引號內(如下圖)，請注意 <code style="color:#f00">"123"</code> 為文字 123 ，不可用於數字計算，如需進行數字計算，則須將其資料類型轉為數字資料類型才可以。
           </p>
-          <img src="imgs/basics/syntax-3.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-3.png" width="80%"><p></p>
           <div style="color:#f00;border-bottom: indigo 3px solid;width:fit-content;">數字類型(<code style="color:#f00">int、float、complex</code>)：</div>
           <p>
             數字類型用於計算，下圖輸出 <code style="color:#f00">int、float、complex</code> 數字類型，其中複數開根號函數(<code style="color:#f00">cmath.sqrt()</code>)，因為定義於 <code style="color:#f00">cmath</code> 模組中，因此必須使用 <code style="color:#f00">import</code> 命令匯入 <code style="color:#f00">cmath</code> 模組，才能使用 <code style="color:#f00">cmath.sqrt()</code> 函數，常用模組會在後續課程說明。
           </p>
-          <img src="imgs/basics/syntax-4.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-4.png" width="80%"><p></p>
           <p>
             如果使用者對文字性數字進行運算時，Python會顯示顯示錯誤(如下圖)，Python <code style="color:#f00">+</code> 號除了用於數字計算之外，如果使用對象為文字時， <code style="color:#f00">+</code> 號則用於文字合併。當使用者希望將文字性的整數 <code style="color:#f00">a</code> 轉換為數字，則可使用資料類型 <code style="color:#f00">int</code> 來進行轉換，浮點數與複數的轉換使用 <code style="color:#f00">float</code> 與 <code style="color:#f00">complex</code>。
           </p>
-          <img src="imgs/basics/syntax-5.png" width="60%"><p></p>
-          <img src="imgs/basics/syntax-6.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-5.png" width="80%"><p></p>
+          <img src="imgs/basics/syntax-6.png" width="80%"><p></p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：請設定變數 school 值為 南臺科技大學，變數 dept 值為 資訊管理系，請用這兩個變數印出 <code style="color:#f00">南臺科技大學 資訊管理系</code>，請注意兩個字中間要有一個空格。
           </h4><p></p>
@@ -111,15 +111,15 @@
             順序類型(<code style="color:#f00">list、tuple、range</code>)將一連串的資料值儲存於單一變數中，清單(<code style="color:#f00">list</code>)將儲存資料置於方括號(<code style="color:#f00">[]</code>)中，每個值以逗號隔開、元素(<code style="color:#f00">tuple</code>)將儲存資料置於小括號(<code style="color:#f00">()</code>)中，每個值以逗號隔開、範圍(<code style="color:#f00">range</code>)則為一整數序列。
           </p>
           <p>清單(<code style="color:#f00">list</code>)項目內容可改變，有順序，使用方括號來建立清單，方括號搭配項目參考位置值用於存取清單項目，第一個項目參考位置值為0，清單項目內容值可以不同。</p>
-          <img src="imgs/basics/syntax-7.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-7.png" width="80%"><p></p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：設定清單變數 x 值包含5個值 1,2,3,4,5，請印出變數 x 第1,3,5 數字和。
           </h4><p></p>
           <p>
             元素(<code style="color:#f00">tuple</code>)項目內容於元素建立後不可改變，項目有順序，使用小括號建立元素，方括號搭配項目參考位置值用於存取項目，第一個項目參考位置值為0，元素項目內容值可以不同，如果元素建立後改變內容會產生錯誤。
           </p>
-          <img src="imgs/basics/syntax-8.png" width="60%"><p></p>
-          <img src="imgs/basics/syntax-9.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-8.png" width="80%"><p></p>
+          <img src="imgs/basics/syntax-9.png" width="80%"><p></p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：設定元素變數 x 值包含5個值 1,2,3,4,5，請印出變數 x 第1,3,5 數字和。
           </h4><p></p>
@@ -129,7 +129,7 @@
           <p>
             範圍(<code style="color:#f00">range</code>)項目為順序整數值，有順序，內容建立後不可改變，使用 <code style="color:#f00">range(起始值,結束值,間距值)</code> 函數來產生範圍項目，使用方括號搭配項目參考位置值來存取項目，如果沒有設定起始值，起始值預設為0，如果沒有設定間距值，間距值預設為1，產生順序整數值由起始值開始，每次增加或減少間距值，一直到結束值為止，但是請注意 <code style="color:#f00">range</code> 不會包含結束值，起始值、結束值、間距值均為整數。
           </p>
-          <img src="imgs/basics/syntax-10.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-10.png" width="80%"><p></p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：設定元素變數 x 範圍，包含項目 1,2,3,4,5，並印出各個項目值。
           </h4><p></p>
@@ -143,7 +143,7 @@
           <p>
             對應類型(<code style="color:#f00">dict</code>)將資料定義於大括號(<code style="color:#f00">{}</code>)中，項目資料為許多 <code style="color:#f00">項目名稱:項目值</code> 的組合，使用者可使用方括符搭配項目名稱來取得項目值，項目名稱不可重複，項目內容可改變，有順序。
           </p>
-          <img src="imgs/basics/syntax-11.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-11.png" width="80%"><p></p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：設定對應類型變數 x，包含 id 與 name 兩個項目，值分別為自己 學號與姓名，之後請印出這兩個項目值。
           </h4><p></p>
@@ -151,7 +151,7 @@
           <p>
             集合類型(<code style="color:#f00">set</code>)將資料定義於大括號(<code style="color:#f00">{}</code>)中，項目資料不可重複，項目內容可增減，沒有順序(資料位置不代表順序)，使用者可以用迴圈搭配運算子 <code style="color:#f00">in</code> 來取得或檢查集合項目。集合類型(<code style="color:#f00">frozenset</code>)將可循環資料類型(<code style="color:#f00">list、tuple、dict、set</code>)轉換為內容不可增減的集合物件。
           </p>
-          <img src="imgs/basics/syntax-12.png" width="60%"><p></p>
+          <img src="imgs/basics/syntax-12.png" width="80%"><p></p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：設定集合變數 x，包含 資管系、企管系、行流系與財金系，將變數 y 值分別設為 資管系與資工系，請印出變數 y 是否在 集合變數 x 中。
           </h4><p></p>
@@ -159,9 +159,9 @@
           <p>
             <code style="color:#f00">bytes</code> 為有順序、不可修改，使用方式為(<code style="color:#f00">bytes(資料,編碼方式)</code>)。中，<code style="color:#f00">bytearray</code> 為有順序、可修改，使用方式同 <code style="color:#f00">bytes</code> 。<code style="color:#f00">memoryview</code> 讓使用者在程式執行過程中可以直接存取 <code style="color:#f00">bytes、bytearray</code> 值，加快存取速度。
           </p>
-          <img src="imgs/basics/syntax-13.png" width="60%"><p></p>
-          <img src="imgs/basics/syntax-14.png" width="60%"><p></p>
-          <img src="imgs/basics/syntax-15.png" width="60%"><p></p>     
+          <img src="imgs/basics/syntax-13.png" width="80%"><p></p>
+          <img src="imgs/basics/syntax-14.png" width="80%"><p></p>
+          <img src="imgs/basics/syntax-15.png" width="80%"><p></p>     
         </div>
 
         <div class="px-3">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>網頁程式設計</title>
+    <title>程式設計(一)</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css" />
@@ -99,7 +99,7 @@
             文字類型修改函數包含 <code style="color:#f00">upper()、lower()、strip()、replace(原始字串,新字串,取代次數)、split(分割符號,分割次數)</code> 等，分別代表 轉大寫、轉小寫、去掉頭尾空白、更換、分割，請注意字串分割函數會傳回字串清單，文字變數呼叫函數方式為 <code style="color:#f00">文字變數.函數()</code>。
           </p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
-            練習：請設定變數 school 值為 "Southerm Taiwan University of Science and Technology"，請印出 全部大寫變數 school、全部小寫變數 school、請將變數 school中 Southerm 替換為 Southern、請將變數 school按照空白進行切割，並印出切割結果中 University。
+            練習：請設定變數 school 值為 "Southerm Taiwan University of Science and Technology"，請印出 全部大寫的變數 school、全部小寫的變數 school、請將變數 school中 Southerm 替換為 Southern、請將變數 school按照空白進行切割，並印出切割結果中 University。
           </h4><p></p>
           <h5>文字類型操作-格式化輸出</h5>
           <p>
@@ -165,6 +165,15 @@
             </li>
             <li>
               刪除清單值：可利用<code style="color:#f00">remove(清單值)、pop()、pop(位置值)、del 清單變數[位置值]、del 清單變數、清單變數.clear()</code> 來刪除資料，分別代表 刪除清單值、刪除最後一個、刪除位置值清單項目、刪除位置值清單項目、移除整個清單變數、刪除清單變數內容(清單變數仍然存在)。
+            </li>
+            <li>
+              清單排序：可利用<code style="color:#f00">清單變數.sort()、清單變數.sort(reverse=True)</code> 來進行清單遞增(由小到大)或遞減(由大到小)
+              排序。<p></p>
+              <img src="imgs/datatypefunctions/listsort.png" width="80%">
+            </li>
+            <li>
+              清單複製：請利用<code style="color:#f00">清單變數.copy()</code> 來進行清單複製，請不要用 <code style="color:#f00">新變數=原始清單變數</code> 的方式進行清單複製，因為這種方式並不會將清單複製到新變數，而是將兩個變數只到相同的清單。<p></p>
+              <img src="imgs/datatypefunctions/listcopy.png" width="80%">
             </li>
           </ul>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
