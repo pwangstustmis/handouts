@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>物聯網基本應用與實作</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">物聯網基本應用與實作</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">物聯網簡介、單晶片介紹、設定與軟體安裝</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="program_led.html" class="nav-link">ESP32開發版簡介、程式簡介、全彩LED</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片WiFi設定與實作</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片藍芽設定與實作</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片溫度感測器雲端應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片與手機開發應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">WiFi/藍芽排風扇實作</a></span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">物聯網簡介、單晶片介紹、設定與軟體安裝</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <div class="px-3">
+          <h3 class="text-dark">物聯網簡介</h3>
+          <p>
+            物聯網(Internet of Things, IoT)希望能串接所有的事物並能連接上網路，因此它串聯<code style="color:#f00">計算設備、機器與對象(包含有生命或無生命)</code>，同時不一定需要人與人或人與電腦互動就可以將訊息傳遞至網路。<br/>物聯網的目的是進行資料的傳送與收集，藉由分析這些資料，可以創造對應的應用。物聯網應用涵蓋各個層面，取決於應用對象，個人應用包含智慧家庭(燈光、溫濕度、監視等)、智慧衣、智慧穿戴式等。企業應用涵蓋智慧城市(公車到站系統、交通監測、公共設施監測等)、智慧醫療、智慧製造、智慧交通等。<br/>物聯網的架構基本包含4個層面(如下圖)：         
+          </p>
+          <p>
+            <img src="imgs/class-1/p1.png" width="60%">
+          </p>
+          <ul>
+            <li>感知/執行：透過各種感測器感知真實世界的各項資訊並執行真實世界設定動作(如開關燈、音量調整等)。
+            </li>
+            <li>傳送：將感知資料透過有線與無線方式(藍芽、WiFi、Lora、MQTT)等將感知資訊傳遞至資料處理與決策或接收資料處理與決策訊息。
+            </li>
+            <li>處理與決策：，這個部分一般我們稱為物聯網的邊緣(edge)，邊緣用於感知資訊前處理，一般常見的邊緣設備包含樹梅派、Arduino、ESP8266、ESP32等。
+            </li>
+            <li>儲存：這個部分用於感知資料深度學習並提供先前層面回饋。
+            </li>
+          </ul>
+          </p>
+          <p>
+            課程將著重於前3個層面的介紹與實作，希望透過課程介紹，同學能實作物聯感知、感知資訊傳送及處理與決策。        
+          </p>
+        </div>
+        
+        <div class="px-3">
+          <h3 class="text-dark">開發版</h3>
+          <p>
+            市面上物聯網的開發粄琳瑯滿目，較為大家所熟知包含樹莓派、Arduino、ESP8266與ESP32。<br/><br/>
+            <img src="imgs/class-1/raspberrypi.png" width="50%"><br/><br/>
+            <img src="imgs/class-1/arduinouno.png" width="50%"><br/><br/>
+            <img src="imgs/class-1/esp8266.png" width="50%"><br/><br/>
+            <img src="imgs/class-1/esp32.png" width="50%">
+          </p>
+          <p>
+            每一種開發版功能與價格皆不相同，開發者應依照其專案所需功能與價格來尋找合適的開發版，課程選擇ESP32(NodeMCU-32s)，因為它除了價格適中(2百多元)，它同時整合WiFi與藍芽、雙核、3.3V與5V輸出。
+          </p>
+        </div>
+        <div class="px-3">
+          <h3 class="text-dark">軟體安裝</h3>
+          <p>
+            軟體安裝包含USB晶片驅動程式(CP210x)與整合性開發環境(IDE)安裝。
+          </p>
+          <ul>
+            <li>
+              USB晶片驅動程式需要使用解壓縮軟體，如果電腦沒有安裝解壓縮軟體，請至<a href="https://www.developershome.com/7-zip/" target="_blank">7-zip</a>下載64位元X64版本，下載完畢，點選下載程式並選擇下一步(Next)來完成安裝。安裝完解壓縮軟體，請至<a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers" target="_blank">Silicon Labs官網</a>點選DOWNLOADS並下載最新版本<code style="color#f00">CP210x Universal Windows Driver</code>，下載完畢，請選擇下載檔案並按下滑鼠右鍵，選擇7-ZIP - 解壓縮至CP210x_Universal_Windows_Driver進行解壓縮，之後進入CP210x_Universal_Windows_Driver檔案夾，執行CP210xVCPInstaller_x64檔案進行安裝，安裝過程請選擇下一步來完成安裝。
+            </li>
+            <li>
+              安裝完驅動程式後，接下來安裝整合性開發環境(IDE)軟體，所謂的整合性開發環境是希望將程式編輯、執行與除錯都整合在一起，開發物聯網程式工具有許多選擇，為了能有較好執行效能，課程選擇Arduino IDE與C語言。請至<a href="https://www.arduino.cc/en/software" target="_blank">Arduino IDE官網</a>下載如橘色框標示Windows Win 7 and newer版本(如下圖)，點選後請選擇 JUST DOWNLOAD。<p></p>
+              <img src="imgs/class-1/arduinoide-1.png" width="80%"><p></p>
+              <p>
+                下載完畢後，請點選下載程式並執行安裝，安裝過程如下三圖片，完成後請選擇 Close：
+              </p>
+              <img src="imgs/class-1/arduinoide-2.png" width="80%"><p></p>
+              <img src="imgs/class-1/arduinoide-3.png" width="80%"><p></p>
+              <img src="imgs/class-1/arduinoide-4.png" width="80%"><p></p>
+              <p>
+                安裝Arduino IDE後，請開啟Arduino IDE，進行開發版定。<code style='color:#f00;'>請注意：不同的開發版一定要先進行開發版設定，載入對應程式庫後，才能使用</code>。請選擇Arduino IDE <code style="color:#f00;">檔案-偏好設定</code>，並在 額外的開發版管理員網址中 貼上 <code style="color:#f00;">https://dl.espressif.com/dl/package_esp32_index.json</code> (如下圖)後選確定。
+              </p>
+              <img src="imgs/class-1/arduinoide-5.png" width="80%"><p></p>
+              <p>
+                接下來點選 <code style="color:#f00">工具/開發板/開發板管理員</code>，會出現開發板管理員視窗，在開發板管理員類型視窗中，輸入關鍵字ESP32後，即可篩選出ESP32核心套件，目前（2021/09月）最新版本為1.0.6，直接點選右側的安裝按鈕，並等候5~10分鐘讓系統下載核心套件並完成安裝，最後再關閉開發板管理員視窗。安裝完畢如下圖。
+              </p>
+              <img src="imgs/class-1/arduinoide-6.png" width="80%"><p></p>
+              <p>
+                最後請點選 <code style="color:#f00">工具/開發板</code>，並往下拉即可在下方找到最新的ESP32系列主板，接下來選擇 <code style="color:#f00">NodeMCU-32S</code> 即可如下圖。
+              </p>
+              <img src="imgs/class-1/arduinoide-7.png" width="80%"><p></p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">系統測試</h3>
+          <p>
+            請將開發版(NodeMCU-32s)裝載麵包版上並接上Micro USB線，之後將Micro USB線接上已安裝Arduino IDE電腦後，點選鍵盤 <code style="color:#f00">Windows符號 及 X</code> 後選擇 <code style="color:#f00">裝置管理員/連接埠(COM與LPT)</code> ，請記住開發版連接埠位置(以下圖為例COM3)。
+          </p>
+          <img src="imgs/class-1/systemtest-1.png" width="80%"><p></p>
+          <p>
+            請開啟 <coed style="color:#f00">檔案/範例/01.Basics/Blink</coed> 範例程式(如下圖)。
+          </p>
+          <img src="imgs/class-1/systemtest-2.png" width="80%"><p></p>
+          <p>
+            請確定 <coed style="color:#f00">工具</coed> 中設定如下圖橘色方框後點選上傳(如下圖2)將程式燒錄至開發版。<coed style="color:#f00">請注意：上傳程式後，必須按住面向USB接口右邊的燒入(Flash)按鈕，等到開始燒錄後，就可以放開</coed>。
+          </p>
+          <img src="imgs/class-1/systemtest-3.png" width="80%"><p></p>
+          <img src="imgs/class-1/systemtest-4.png" width="80%"><p></p>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>

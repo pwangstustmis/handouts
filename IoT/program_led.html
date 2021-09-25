@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>物聯網基本應用與實作</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">物聯網基本應用與實作</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">物聯網簡介、單晶片介紹、設定與軟體安裝</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="program_led.html" class="nav-link">ESP32開發版簡介、程式簡介、全彩LED</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片WiFi設定與實作</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片藍芽設定與實作</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片溫度感測器雲端應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片與手機開發應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">WiFi/藍芽排風扇實作</a></span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">ESP32開發版簡介、程式簡介、全彩LED</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <div class="px-3">
+          <h3 class="text-dark">ESP32開發版(NodeMCU 32s)簡介</h3>
+          <p style="color:#f00;">
+            進行物聯操作時，要確定所有的零件極性(正極或負極)與負載(超載會燒壞零件)，電流由正極流向負極，接好所有線路，確認後再進行通電(接上USB)，這樣可以避免因操作不當，將開發版或零件燒毀，要進行線路的更動時，一定要將開發版斷電(拔除USB連接線)。      
+          </p>
+          <p>
+            設計之前，必須了解開發版的功能及其對應腳位，下圖為課程使用ESP32開發版(NodeMCU 32s)腳位圖：         
+          </p>
+          <p>
+            <img src="imgs/class-2/esp32pins.jpg" width="60%">
+          </p>
+          <ul>
+            <li>輸出電源與接地：NodeMCU 32s包含 <code style="color:#f00">5V(紅色)及3.3V(橘色)</code> 正極(高電位)，接地(負極或低電位)以 <code style="color:#f00">GND(黑色)</code> 表示。電流由高電位流向低電位，ESP32 GPIO接腳輸出為直流電，電壓為3.3V。<code style="color:#f00">請注意：不可以將GPIO接腳直接接地，因為中間沒有阻抗，會將開發版燒毀。</code>
+            </li>
+            <li>通用輸入輸出(GPIOx)：圖片中標是白色的腳位，可用於進行數位訊號輸入或輸出，GPIO之後數字代表通用輸入輸出腳位號碼。使用者可以利用GPIO進行數位控制，可使用GPIO(4,5,12-27,32-39)，但是GPIO34-GPIO39僅供訊號輸入使用。
+            </li>
+            <li>類比訊號輸入(ADC)：圖片中淺藍色的腳位，用於將讀入類比訊號轉為數位訊號。
+            </li>
+            <li>電容接觸感測(Touch)：用於偵測人類手指接觸生的電容差。
+            </li>
+            <li>序列傳輸(RX/TX)：進行序列資料接收與傳送。
+            </li>
+            <li>快取(FLASH)：用於系統快取，不建議使用這些腳位。
+            </li>
+          </ul>
+          </p>
+        </div>
+        
+        <div class="px-3">
+          <h3 class="text-dark">第一個Arduino IDE程式</h3>
+          <p>
+            第一個Arduino IDE程式讓開發版上預設LED以1秒間格進行閃爍。請開啟Arduino IDE後，選擇 <code style="color:#f00">檔案/範例/01.Basics/Blink</code> 。
+          </p>
+          <img src="imgs/class-2/prog-1.png"><p></p>
+          <p>
+            Arduino IDE使用C語言進行開發版控制。程式中//代表註解，用於加上程式說明文字，同時C語言區分英文字大小寫，因此在撰寫程式時，請注意命令大小寫。Arduino IDE程式包含兩個無傳回值(void)函數 <code style="color:#f00">setup()與loop()</code>，setup()用於開發版啟動時的設定，只會執行一次，之後開發版將重複執行loop()函數中的命令，對C語言不熟悉的同學，可以操考Google中相關網站或參考<a href="http://faculty.stust.edu.tw/~pwang/" target="_blank">C語言複習網站</a>。
+          </p>
+          <p>  
+            程式首先執行setup()函數中命令，之後會重複執行loop()函數中的命令，兩個函數的所有命令皆包含於 <code style="color:#f00">{ }</code>中。首先setup()函數執行 <code style="color:#f00">pinMode(LED_BUILTIN,OUTPUT);</code>，pinMode命令用於設定GPIO腳位的模式，需要兩個代入值分別為 GPIO腳位 與 腳位模式(<code style="color:#f00">INPUT或OUTPUT</code>)，程式中 LED_BUILTIN 為系統預設代表 GPIO2腳位，使用者可以用 2 取代 LED_BUILTIN，因此執行完 setup() 之後，開發版將GPIO2腳位設定為可輸出。
+          </p>
+          <p>
+            接下來開發版將重複執行 loop() 中命令，loop()中第一個命令為 <code style="color:#f00">digitalWrite(LED_BUILTIN,HIGH);</code> ，digitalWrite命令需要兩個代入值分別為設定輸出的 GPIO腳位 與 輸出值(<code style="color:#f00">HIGH或LOW</code>)，當輸出值為 <code style="color:#f00">HIGH</code> 時，會開通對應的接腳，電流會從接腳輸出。當輸出值為 <code style="color:#f00">LOW</code> 時，則關閉對應接腳的電流輸出。delay命令用於設定延遲，讓程式暫停一段時間，delay命令代入數字代表延遲時間，時間以毫秒(千分之一秒)表示，因此delay(1000)代表延遲1秒，因此Blink程式在開始 setup() 設定輸出腳位後，loop() 程式會開通開發版預設LED的GPIO接腳後，延遲1秒後，將其關閉並延遲1秒，之後繼續執行loop()函數。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請練習改變開發版上LED閃爍時間，例如亮4秒，暗2秒。
+          </h4><p></p>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">開關外接LED</h3>
+          <p>
+            了解如何開關開發版上LED之後，請將開發版USB連接線拔除，接下來我們將進行LED線路連接。LED有分正負極(如下圖)，長腳為正極，短腳為負極，電源由LED正極進入再由LED負極流出，LED有最大電流限制，超過電流會導致LED燒毀，所以接LED時需要再LED正端或負端串接一個電阻作為LED保護用。
+          </p>
+          <img src="imgs/class-2/ledpn.png"><p></p>
+          <p>
+            請選擇可用GPIO腳位並修改上一個閃爍程式來控制外部LED，LED接線如下圖，當開啟GPIO22腳位電流經過 <code style="color:#f00">LED正極 - LED負極 - 電阻 - GND(接地)</code>。確定線路無誤後，再將開發版接上USB。
+          </p>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">脈衝寬度調變(PWM)外接LED</h3>
+          <p>
+            脈衝寬度調變(PWM)是一種利用數位訊號模擬類比訊號的方式。通常可以用於調整燈光的亮度、馬達的轉速、RGB LED 的配色、螢幕亮度控制、喇叭的大小聲/聲音頻率等。ESP32要使用PWM須執行下列兩個步驟。
+          </p>
+          <ul>
+            <li>
+              首先在setup()函數執行 <code style="color:#f00">ledcSetup(通道,頻率,輸出週期)與ledcAttachPin(GPIO接腳,通道)</code> 命令，ledcSetup用於設定要使用的PWM通道，ESP32總共有16通道(0到15)，頻率一般設為5000，輸出週期值可以從1到16，代表輸出週期位元數，通常我們輸出週期會設為 8 (代表有256種大小，0到255)。<br/>設定完通道及頻率後，接下來利用 ledcAttachPin將GPIO接腳綁定至對應的通道。以上一個開關LED為例，在setup()中程式會改為<br/>
+              ledcSetup(0,5000,8);<br/>
+              ledcAttachPin(22,0);
+            </li>
+            <li>
+              完成setup()中相關設定後，在loop()函數執行 <code style="color:#f00">ledcWrite(通道,週期值)</code> 命令即可控制LED亮度，如果當初 ledcSetup 輸出週期值設8，則週期值 0 代表 關閉，週期值 127 代表 一半亮度，週期值 255 代表 全亮。<br/>設定完通道及頻率後，接下來利用 ledcAttachPin將GPIO接腳綁定至對應的通道。以上一個開關LED為例，在setup()中程式會改為<br/>
+              void setup() {<br/>
+                ledcSetup(0,5000,8);<br/>
+                ledcAttachPin(22,0);<br/>
+                pinMode(22, OUTPUT);<br/>
+              }<br/>
+              void loop() {<br/>
+                ledcWrite(0,0);<br/>
+                delay(2000);<br/>
+                ledcWrite(0,100);<br/>
+                delay(2000);<br/>
+                ledcWrite(0,255);<br/>
+                delay(2000);<br/>
+             }
+            </li>
+          </ul>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：利用程式迴圈讓LED漸變亮後，停2秒，再逐漸變暗，再停2秒。
+          </h4><p></p>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">全彩(RGB)LED</h3>
+          <p>
+            全彩(RGB)LED接腳如下圖：
+          </p>
+          <img src="imgs/class-2/rgbled.png"><p></p>
+          <p>
+            請將GND接至開發版GND腳位，另外選擇三個GPIO腳位來串接紅(R)、綠(G)、藍(B)，開關或PWM設定同單顆LED。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：利用開關LED步驟，設定全彩LED紅色1秒、綠色1秒、藍色1秒。
+          </h4><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：利用LED PWM步驟，設定全彩LED呼吸燈。
+          </h4><p></p>
+        </div>
+        <div class="px-3">
+          <h3 class="text-dark">序列埠監控視窗</h3>
+          <p>
+            接上開發版後選擇 <code style="color:#f00">工具/序列埠監控視窗</code>可開啟如下圖監控視窗，使用者可藉由命令 <code style="color:#f00">Serial.print()或Serial.println()</code> 將答案輸出序列埠監控視窗。要使用序列埠，請在 setup()程式中設定 <code style="color:#f00">Serial.begin(序列埠傳輸速率);</code> ，一般傳輸速率設為 115200，同時序列埠監控視窗下方速率請設成相同的速率(如115200baud)，否則就無法溝通。
+          </p>
+          <img src="imgs/class-2/serialwindow.png"><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在開關LED程式 setup()中一開始加入 <code style="color:#f00">Serial.begin(115200);</code> ，接下來輸入命令 <code style="color:#f00">Serial.print("設定序列埠速度");</code> ，開啟序列埠監控視窗並確定傳輸速率為 115200baud，之後進行程式燒錄並觀看序列埠監控視窗輸出結果。
+          </h4><p></p>
+        </div>
+        <div class="px-3">
+          <h3 class="text-dark">觸控開關LED</h3>
+          <p>
+            透過讀取電容接觸感測(Touch)腳位值來判定使否有接觸，實驗分為兩個部分，首先我們要知道當手接觸電容接觸感測(Touch)腳位時的數值是多少，接下來利用這個數值當作判斷基準來開關LED。要讀取電容接觸感測(Touch)腳位值使用 <code style="color:#f00">touchRead(腳位)</code> 命令即可讀出該腳位現在值。
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請同學使用電容接觸感測(Touch)腳位 4，並將讀取數值輸出到序列埠監控視窗，讀取間格0.1秒。
+          </h4><p></p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請同學利用開關LED範例並使用電容接觸感測(Touch)腳位 4值來控制LED開關。
+          </h4><p></p>
+          <button onclick="document.getElementById('touchsol').style.visibility='visible';">答案</button>
+          <div id="touchsol" style="visibility: hidden;color:#f00">
+            bool power=false;<br/>
+            void setup() {<br/>
+              &nbsp;&nbsp;&nbsp;Serial.begin(115200);<br/>
+              &nbsp;&nbsp;&nbsp;pinMode(22,OUTPUT);<br/>
+              &nbsp;&nbsp;&nbsp;digitalWrite(22,LOW);<br/>
+            }<br/>
+
+            void loop() {<br/>
+              &nbsp;&nbsp;&nbsp;int t=touchRead(4);<br/>
+              &nbsp;&nbsp;&nbsp;Serial.println(t);<br/>
+              &nbsp;&nbsp;&nbsp;if (t&lt;10) {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(22,HIGH);<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (power)<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(22,LOW);<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(22,HIGH);<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;power=!power;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serial.println(power);<br/>
+                &nbsp;&nbsp;&nbsp;}<br/>
+                &nbsp;&nbsp;&nbsp;delay(500);<br/>
+            }<br/>
+          </div>
+        </div>
+             
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>
