@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第一個MVC專案</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+        <ul class="nav flex-column text-white w-100">
+          <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+            <p style="color:rgb(248, 138, 11);font-weight: 700;">網頁程式設計<br/>ASP.Net Core</p>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+              <span class="mx-2">課程簡介</span>
+              <i class="fas fa-angle-right"></i>
+            </div>
+            <div class="collapse" id="topic1">
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="index.html">網頁應用架構</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="intro-html.html">HTML</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="intro-css.html">CSS</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="intro-javascript.html">JavaScript</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" href="#topic2" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic2">
+              <span class="mx-2">.NET Core-MVC</span>
+              <i class="fas fa-angle-right"></i>
+            </div>
+            <div class="collapse" id="topic2">
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="dnet-1.html">第一個MVC專案</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="dnet-2.html">資料傳遞-控制器到檢視</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="dnet-3.html">檢視(View)-Razor語法</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="intro-html.html">控制器(COntroller)</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="intro-css.html">檢視(View)</a></li>
+              </ul>
+              <ul>
+                <li class="menuitem"><a class="nav-link" href="intro-javascript.html">資料模型</a></li>
+              </ul>
+            </div>              
+          </li>      
+      </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">.NET Core-MVC</li>
+          <li class="breadcrumb-item">檢視(View)-Razor語法</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">何謂Razor</h3>
+        <p class="px-3">
+            Razor是將.NET程式碼內嵌到網頁中的標記語法，Razor語法包含Razor標記、C#和 HTML。伺服器端會解析Razor並將結果呈現於檢視頁面中，透過Razor，設計者設計動態資料導向的網頁應用。
+        </p>
+              
+        <div class="px-3">
+          <h5>基本語法</h5>
+          <p>
+              在檢視畫面中，設計者可以使用 <code style="color:#f00">@</code> 符號加入Razor標記、C#和 HTML，請注意 <code style="color:#f00">@</code> 後命令不可以有空白。使用Razor語法有下列三種方式：
+          </p>
+          <ul>
+            <li>
+                隱含：直接在 @符號之後輸入Razor運算式，例如在Index檢視頁面(Index.cshtml)中輸入 <code style="color:#f00">@DateTime.Now.ToString("yyyy-MMM-dd")</code> 會顯示現在時間的年月日。但是隱含方式的方式僅能用於變數、保留字等，不能用於運算如 3+5 或包含空格。
+            </li>
+            <li>
+                明確：直接在 @符號之後將Razor運算式放在小括符中，例如在Index檢視頁面(Index.cshtml)中輸入 <code style="color:#f00">@(3+5)</code> 會顯示計算結果。明確方式可用於運算如 3+5 或包含空格。
+            </li>
+            <li>
+                多行：將Razor運算式置於 <code style="color:#f00">@{ }</code> 中。在多行命令中可以包含HTML標籤，如 <code style="color:#f00">@{ &lt;h1&gt;Hello!&lt;/h1&gt; }</code>，同時在HTML標籤內如要使用Razor變數，則需使用 @ 符號，例如 <code style="color:#f00">@{ var x="STUST"; &lt;h1&gt;@x&lt;/h1&gt; }</code>。
+            </li>
+          </ul>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在HomeController中Index動作新增ViewData變數deposit(本金)值為 10000，變數interest(利率)值為 0.02，並在對應檢視畫面使用Razor多行方式用大標題顯示deposit與interest。
+          </h4><p></p>
+        </div>
+        <div class="px-3">
+            <h5>條件結構</h5>
+            <p>
+                Razor語法可使用條件結構 <code style="color:#f00">@if、else if、else與 @switch</code>)，範例如下圖。
+            </p>
+            <img src="imgs/dnet-3/pic_if.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_ifelseif.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_switch.png" width="60%"><p></p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index動作新增ViewBag屬性dept值為 資訊管理系，並在對應檢視畫面判斷ViewData屬性值是否為 資訊管理系，如果是請印出 是資訊管理系，否則請印出 不是資訊管理系。
+            </h4><p></p> 
+          </div>
+          <div class="px-3">
+            <h5>迴圈</h5>
+            <p>
+                Razor語法可使用迴圈結構 <code style="color:#f00">@for、@foreach、@while與@do while</code>)，範例如下圖。
+            </p>
+            <img src="imgs/dnet-3/pic_for.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_foreach.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_while.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_dowhile.png" width="60%"><p></p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index動作新增ViewData變數num值為 10，並在Index檢視畫面利用迴圈顯示所有 1 到 變數dept值。
+            </h4><p></p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index檢視畫面設定ViewBag變數students清單包含10位學生，並在Index檢視畫面利用迴圈及Bootstrap表格顯示每位學生學號、姓名及電話。
+            </h4><p></p>   
+          </div>
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>

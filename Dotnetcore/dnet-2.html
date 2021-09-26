@@ -50,6 +50,9 @@
               <li class="menuitem"><a class="nav-link" href="dnet-2.html">資料傳遞-控制器到檢視</a></li>
             </ul>
             <ul>
+              <li class="menuitem"><a class="nav-link" href="dnet-3.html">檢視(View)-Razor語法</a></li>
+            </ul>
+            <ul>
               <li class="menuitem"><a class="nav-link" href="intro-html.html">控制器(COntroller)</a></li>
             </ul>
             <ul>
@@ -118,6 +121,67 @@
               練習：請在HomeController中Index檢視畫面設定TempData變數income值為 50000，並設定連結執行HomeController中Index動作，請設定中斷檢查Index檢視畫面設定TempData變數income值。
             </h4><p></p>   
           </div>
+
+          <h3 class="text-dark p-3">何謂Razor</h3>
+        <p class="px-3">
+            在了解如何透過 <code style="color:#f00">ViewData、ViewBag與TempData</code> ，將暫時性資料由控制器傳至檢視頁面，接下來將介紹如何利用Razor語言來顯示這些資料。Razor是將.NET程式碼內嵌到網頁中的標記語法，Razor語法包含Razor標記、C#和 HTML。伺服器端會解析Razor並將結果呈現於檢視頁面中，透過Razor，設計者設計動態資料導向的網頁應用。
+        </p>
+              
+        <div class="px-3">
+          <h5>基本語法</h5>
+          <p>
+              在檢視畫面中，設計者可以使用 <code style="color:#f00">@</code> 符號加入Razor標記、C#和 HTML，請注意 <code style="color:#f00">@</code> 後命令不可以有空白。使用Razor語法有下列三種方式：
+          </p>
+          <ul>
+            <li>
+                隱含：直接在 @符號之後輸入Razor運算式，例如在Index檢視頁面(Index.cshtml)中輸入 <code style="color:#f00">@DateTime.Now.ToString("yyyy-MMM-dd")</code> 會顯示現在時間的年月日。但是隱含方式的方式僅能用於變數、保留字等，不能用於運算如 3+5 或包含空格。
+            </li>
+            <li>
+                明確：直接在 @符號之後將Razor運算式放在小括符中，例如在Index檢視頁面(Index.cshtml)中輸入 <code style="color:#f00">@(3+5)</code> 會顯示計算結果。明確方式可用於運算如 3+5 或包含空格。
+            </li>
+            <li>
+                多行：將Razor運算式置於 <code style="color:#f00">@{ }</code> 中。在多行命令中可以包含HTML標籤，如 <code style="color:#f00">@{ &lt;h1&gt;Hello!&lt;/h1&gt; }</code>，同時在HTML標籤內如要使用Razor變數，則需使用 @ 符號，例如 <code style="color:#f00">@{ var x="STUST"; &lt;h1&gt;@x&lt;/h1&gt; }</code>。
+            </li>
+          </ul>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請在HomeController中Index動作新增ViewData變數deposit(本金)值為 10000，變數interest(利率)值為 0.02，並在對應檢視畫面使用Razor多行方式用大標題顯示deposit與interest。
+          </h4><p></p>
+        </div>
+        <div class="px-3">
+            <h5>條件結構</h5>
+            <p>
+                Razor語法可使用條件結構 <code style="color:#f00">@if、else if、else與 @switch</code>)，範例如下圖。
+            </p>
+            <img src="imgs/dnet-3/pic_if.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_ifelseif.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_switch.png" width="60%"><p></p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index動作新增ViewBag屬性dept值為 資訊管理系，並在對應檢視畫面判斷ViewData屬性值是否為 資訊管理系，如果是請印出 是資訊管理系，否則請印出 不是資訊管理系。
+            </h4><p></p> 
+          </div>
+          <div class="px-3">
+            <h5>迴圈</h5>
+            <p>
+                Razor語法可使用迴圈結構 <code style="color:#f00">@for、@foreach、@while與@do while</code>)，範例如下圖。
+            </p>
+            <img src="imgs/dnet-3/pic_for.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_foreach.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_while.png" width="60%"><p></p>
+            <img src="imgs/dnet-3/pic_dowhile.png" width="60%"><p></p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在HomeController中Index動作新增ViewData變數num值為 10，並在Index檢視畫面利用迴圈顯示所有 1 到 變數dept值。
+            </h4><p></p>  
+          </div>
+          <div class="px-3">
+            <h5>資料模型</h5>
+            <p>
+                Razor語法使用 <code style="color:#f00">@model</code> 來設定檢視頁面使用的資料模型定義，使用方式在檢視頁面開始輸入 <code style="color:#f00">@model 資料模型命名空間.資料類別</code>。請注意使用命名空間定義，@model的 <code style="color:#f00">m</code> 必須是小寫，而且最後不須加上 <code style="color:#f00">;</code> 。而控制器傳遞到檢視頁面的資料物件會存在 @Model中，請注意：資料物件 <code style="color:#f00">M</code> 必須是大寫。
+            </p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在Models建立學生基本資料類別Student，包含學號(Sid)、姓名(Sname)與電話(Sphone)，在HomeController中Index動作新增10位學生資料，之後將學生資料傳至Index檢視畫面，並在Index檢視畫面利用迴圈及Bootstrap表格顯示每位學生學號、姓名及電話。
+            </h4><p></p>   
+          </div>
+
       </div>
     </div>
 
