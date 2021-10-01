@@ -12,7 +12,6 @@
   <body>
 
     <!-- Side-Nav -->
-    <!-- Side-Nav -->
     <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
       <ul class="nav flex-column text-white w-100">
         <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
@@ -34,13 +33,16 @@
               <li class="menuitem"><a class="nav-link" href="datatypefunctions.html">資料類型操作</a></li>
             </ul>
             <ul>
-              <li class="menuitem"><a class="nav-link" href="intro-html.html">條件與迴圈</a></li>
+              <li class="menuitem"><a class="nav-link" href="progio-sequence.html">程式輸入輸出與循序邏輯</a></li>
             </ul>
             <ul>
-              <li class="menuitem"><a class="nav-link" href="intro-html.html">函數、lambda函數與模組</a></li>
+              <li class="menuitem"><a class="nav-link" href="#">程式條件與迴圈</a></li>
             </ul>
             <ul>
-              <li class="menuitem"><a class="nav-link" href="intro-html.html">物件、類別</a></li>
+              <li class="menuitem"><a class="nav-link" href="#">函數、lambda函數與模組</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="#">物件、類別</a></li>
             </ul>
           </div>
         </li>     
@@ -76,7 +78,7 @@
         <div class="px-3">
           <h5>文字類型操作</h5>
           <p>
-            文字在Python以萬國碼(Unicode)方式儲存，儲存方式類似清單，因此可利用字元位置取得字串內容，同時支援 in 運算自，請注意字串長度函數為 <code style="color:#f00">len()</code>。
+            文字在Python以萬國碼(Unicode)方式儲存，儲存方式類似清單，因此可利用字元位置取得字串內容，同時支援 in 運算自，請注意字串長度函數為 <code style="color:#f00">len(字串或字串變數)</code>。
           </p>
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：請設定變數 school 值為 南臺科技大學，變數 dept 值為 資訊管理系，請先印出變數school包含字數，之後請將變數school中 南臺 與變數dept中 資管 取出並合併至變數 x。
@@ -123,7 +125,7 @@
             </li>
             <li><code style="color:#f00">"{:^位數}".format(輸出值)</code>：其指定位數輸出並置中，例如 <code style="color:#f00">print("{:^8}".format("abc"))</code> 會輸出8字元長度並置中abc
             </li>
-            <li><code style="color:#f00">"{:+位數}".format(輸出值)</code>：其指定位數輸出並對數字最左邊加上正負號，例如 <code style="color:#f00">print("{:=8}".format(123))</code> 會輸出8字元長度+123
+            <li><code style="color:#f00">"{:+位數}".format(輸出值)</code>：其指定位數輸出並對數字最左邊加上正負號，例如 <code style="color:#f00">print("{:+8}".format(123))</code> 會輸出8字元長度+123
             </li>
             <li><code style="color:#f00">"{:位數,}".format(輸出值)</code>：對數字輸出位數長度三位加上一個逗點，例如 <code style="color:#f00">print("{:6,}".format(12345))</code> 會12,345
             </li>
@@ -169,16 +171,90 @@
             <li>
               清單排序：可利用<code style="color:#f00">清單變數.sort()、清單變數.sort(reverse=True)</code> 來進行清單遞增(由小到大)或遞減(由大到小)
               排序。<p></p>
-              <img src="imgs/datatypefunctions/listsort.png" width="80%">
+              <img src="imgs/datatypefunctions/listsort.png" width="50%">
             </li>
             <li>
               清單複製：請利用<code style="color:#f00">清單變數.copy()</code> 來進行清單複製，請不要用 <code style="color:#f00">新變數=原始清單變數</code> 的方式進行清單複製，因為這種方式並不會將清單複製到新變數，而是將兩個變數只到相同的清單。<p></p>
-              <img src="imgs/datatypefunctions/listcopy.png" width="80%">
+              <img src="imgs/datatypefunctions/listcopy.png" width="50%">
+            </li>
+            <li>
+              清單合併：請利用<code style="color:#f00">+</code> 來進行清單合併。<p></p>
+              <img src="imgs/datatypefunctions/listjoin.png" width="50%">
+            </li>
+            <li>
+              清單函數：常用清單函數如下:
+              <ul>
+                <li>
+                  append()：新增元素至最後。<p></p>
+                  <img src="imgs/datatypefunctions/listappend.png" width="50%">
+                </li>
+                <li>
+                  clear()：清除清單所有元素。<p></p>
+                  <img src="imgs/datatypefunctions/listclear.png" width="50%">
+                </li>
+                <li>
+                  count()：傳回特定元素個數。<p></p>
+                  <img src="imgs/datatypefunctions/listcount.png" width="50%">
+                </li>
+                <li>
+                  index()：傳回特定元素第一次出現位置。<p></p>
+                  <img src="imgs/datatypefunctions/listindex.png" width="50%">
+                </li>
+                <li>
+                  insert()：新增元素至特定位置，有兩個代入值分別是位置值與元素值。<p></p>
+                  <img src="imgs/datatypefunctions/listinsert.png" width="50%">
+                </li>
+                <li>
+                  pop()：移除特定位置元素。<p></p>
+                  <img src="imgs/datatypefunctions/listpop.png" width="50%">
+                </li>
+                <li>
+                  remove()：移除第一個出現特定值元素。<p></p>
+                  <img src="imgs/datatypefunctions/listremove.png" width="50%">
+                </li>
+                <li>
+                  reverse()：清單倒轉。<p></p>
+                  <img src="imgs/datatypefunctions/listreverse.png" width="50%">
+                </li>
+              </ul>
             </li>
           </ul>
-          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
-            練習：請設定變數 x 值為 "1234"，請印出變數 x 前兩個數字加上後兩個數字答案。
-          </h4><p></p>
+        </div>
+        <div class="px-3">
+          <h5>集合類型操作</h5>
+          <p>
+            集合類型操作包含 <code style="color:#f00">add、clear、copy、difference、intersection、remove、union</code>。
+          </p>
+          <ul>
+            <li>
+              add()：新增元素至集合。<p></p>
+              <img src="imgs/datatypefunctions/setadd.png" width="50%">
+            </li>
+            <li>
+              clear()：清除集合所有元素。<p></p>
+              <img src="imgs/datatypefunctions/setclear.png" width="50%">
+            </li>
+            <li>
+              copy()：複製集合。<p></p>
+              <img src="imgs/datatypefunctions/setcopy.png" width="50%">
+            </li>
+            <li>
+              difference()：傳回與另一集合差集合。<p></p>
+              <img src="imgs/datatypefunctions/setdiff.png" width="50%">
+            </li>
+            <li>
+              intersection()：傳回與另一集合交集。<p></p>
+              <img src="imgs/datatypefunctions/setintersect.png" width="50%">
+            </li>
+            <li>
+              remove()：移除特定值元素。<p></p>
+              <img src="imgs/datatypefunctions/setremove.png" width="50%">
+            </li>
+            <li>
+              union()：傳回與另一集合聯集。<p></p>
+              <img src="imgs/datatypefunctions/setunion.png" width="50%">
+            </li>
+          </ul>
         </div>
 
         
