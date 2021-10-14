@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>程式輸入輸出、循序、條件與迴圈邏輯</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">程式設計(一)<br/>Python</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">程式語言簡介與軟體安裝</a></span>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" href="#topic1" class="nav-item" data-bs-toggle="collapse" aria-expanded="false" aria-controls="topic1">
+            <span class="mx-2">Python Basics</span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="collapse" id="topic1">
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="basics.html">Python語法、變數、資料類型與運算子</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="datatypefunctions.html">資料類型操作</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="progio-logics.html">程式輸入輸出、循序、條件與迴圈邏輯</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="#">函數、lambda函數與模組</a></li>
+            </ul>
+            <ul>
+              <li class="menuitem"><a class="nav-link" href="#">物件、類別</a></li>
+            </ul>
+          </div>
+        </li>     
+        
+        <li href="#" class="nav-link">
+          <i class="fas fa-file"></i>
+          <span class="mx-2">第一個專案</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Python Basics</li>
+          <li class="breadcrumb-item">程式輸入輸出、循序、條件與迴圈邏輯</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <h3 class="text-dark p-3">程式輸入輸出</h3>
+        <div class="px-3">
+          <p>
+            了解變數資料類型操作之後，接下來介紹程式輸入與輸出，輸入將資料從外部讀入程式中，課程將介紹 <code style="color:#f00">使用者輸入-input()、錯誤處理-try except finally、輸出-print()、讀取檔案-read()、readline()、readlines()、寫入檔案-write()、writelines()、requests模組、JSON模組</code>。</p>
+        </div>
+        
+        <div class="px-3">
+          <h5>使用者輸入-input()</h5>
+          <p>
+            Python input()用於讀取使用者輸入，直到使用者按下Enter鍵，使用方次包含 <code style="color:#f00">input()或input('提示文字')</code>，input()傳回文字</code>。
+          </p>
+<pre style="color:#f00">
+  x=input()
+  print(int(x)*10)
+  y=int(input('請輸入整數:'))
+  print(y*10)
+</pre>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請利用 input() 函數輸入兩個數並印出兩個數字和。
+          </h4><p></p>
+        </div>
+
+        <div class="px-3">
+          <h5>錯誤處理-try except finally</h5>
+          <p>
+            錯誤處理-<code style="color:#f00">try except finally</code> 用於設定錯誤檢查，<code style="color:#f00">try</code> 區域用於執行可能會發生錯誤的程式區塊，<code style="color:#f00">except</code> 區域用於設定當 <code style="color:#f00">try</code> 發生錯誤時要執行的程式區塊，<code style="color:#f00">finally</code> 區域用於設定不論是否發生錯誤都要執行的程式區塊。<code style="color:#f00">except</code> 偵測錯誤類型如下圖：
+          </p>
+          <img src="imgs/progio/exception-1.png" width="40%" style="vertical-align: top;">
+          <img src="imgs/progio/exception-2.png" width="40%"><p></p>
+          <p>
+            請執行先前輸入數字練習，輸入文字後發生 <code style="color:#f00">ValueError</code> 錯誤，當我們將程式加入錯誤檢查，當使用者輸入錯誤時，程式會執行 <code style="color:#f00">except</code> 區塊，如果使用者不清楚錯誤類型，則不須設定錯誤類型，僅使用 <code style="color:#f00">except</code> 即可。
+          </p>
+<pre style="color:#f00">
+  try:
+    x=input()
+    print(int(x)*10)
+  except ValueError:
+    print('請輸入整數')
+</pre>
+        </div>
+        <div class="px-3">
+          <h5>輸出-print()</h5>
+          <p>
+            輸出方式包含 <code style="color:#f00">print(變數)、print('{}'.format(變數))、print(f'{變數}')</code> ，建議使用 <code style="color:#f00">print(f'{變數}')</code> 進行輸出，請注意變數後可接 資料類型操作中格式化輸出。
+          </p>
+<pre style="color:#f00">
+  print(f'{" "*5}*')
+  print(f'{" "*4}{"*"*3}')
+  print(f'{" "*3}{"*"*5}')
+  print(f'{" "*2}{"*"*7}')
+  print(f'{" "*1}{"*"*9}')
+  print(f'{" "*0}{"*"*11}')
+</pre>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請利用 input() 函數輸入兩個變數 x 與 y，使用 print()函數搭配 f 字串輸出 x個空白、y個 *。
+          </h4><p></p>
+        </div>
+        <div class="px-3">
+          <h5>讀取檔案-read()、readline()、readlines()</h5>
+          <p>
+            資料輸入除來自使用者，還有包含檔案，檔案讀入函數包含 <code style="color:#f00">read()、readline()、readlines()</code>，執行檔案讀入之前，使用必須先開啟檔案(<code style="color:#f00">open()函數</code>)，讀入完畢後，必須關閉檔案(<code style="color:#f00">close()函數</code>)。
+          </p>
+          <ul>
+            <li><code style="color:#f00">open('檔案位置/名稱','檔案模式',encoding='檔案編碼')</code>：<code style="color:#f00">檔案位置/名稱</code> 為輸入檔案相對於python程式的相對位置與檔名，下列範例將資料檔案 test.txt 置於files檔案夾中。檔案模式包含 <code style="color:#f00">r、w、a、x、t、b</code>， <code style="color:#f00">r</code> 代表唯讀(如果讀取檔案不存在會產生錯誤)、<code style="color:#f00">w</code> 代表寫入(如果讀取檔案不存在會建立新檔案，如果檔案存在，會清除檔案內容)、<code style="color:#f00">a</code> 代表新增(如果讀取檔案不存在會建立新檔案，如果檔案存在，不會清除檔案內容)、<code style="color:#f00">x</code> 代表建立檔案(如果讀取檔案存在，會生錯誤)、<code style="color:#f00">t</code> 代表文字檔案、<code style="color:#f00">b</code> 代表二進制檔案。編碼模式常用為 <code style="color:#f00">utf-8</code>。<code style="color:#f00">請注意：open()函數會傳回檔案物件</code>。<p></p>
+<pre style="color:#f00">
+f=open('files/test.txt','rt',encoding='utf-8')
+f.close()
+</pre>
+            </li>
+            <li><code style="color:#f00">read()</code>：read()函數可以代入讀取大小，如果未代入大小，則全部讀取。<p></p>
+<pre style="color:#f00">
+f=open('files/test.txt','rt',encoding='utf-8')
+print(f.read())
+f.close()
+f=open('files/test.txt','rt',encoding='utf-8')
+print(f.read(4))
+f.close()
+</pre>
+            </li>
+            <li><code style="color:#f00">readline()</code>：readline()函數讀取一整行。請注意readline()傳回值會包含跳行符號。如果要移除讀入資料的跳行符號，可以使用字串 <code style="color:#f00">splitlines()</code> 函數。<p></p>
+<pre style="color:#f00">
+f=open('files/test.txt','rt',encoding='utf-8')
+print(f.readline())
+f.close()
+</pre>
+            </li>
+            <li><code style="color:#f00">readlines()</code>：readlines()函數讀取全部並將每一行以清單項目傳回。<p></p>
+<pre style="color:#f00">
+f=open('files/test.txt','rt',encoding='utf-8')
+print(f.readlines())
+f.close()
+</pre>
+            </li>
+          </ul>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請利用 try except檢查檔案操作，當發生錯誤時，輸出錯誤訊息。
+          </h4><p></p>
+          <p>
+            使用系統資源操作(如檔案)，當使用者不再需要時，必須釋放資源(如檔案close())，如果使用者忘了釋放資源，最終系統有可能會耗盡資源(記憶體)。為了避免使用者忘了釋放資源，Python可以使用 <code style="color:#f00"> with 資源操作命令 as 變數</code>，當使用者結束with程式區塊時，系統資源就會被釋放。請注意：with命令可搭配 try except。
+          </p>
+<pre style="color:#f00">
+with open('files/test.txt','rt',encoding='utf-8') as f:
+  print(f.readlines())
+</pre>
+        </div>
+
+        <div class="px-3">
+          <h5>寫入檔案-write()、writelines()</h5>
+          <p>
+            如同檔案讀取，<code style="color:#f00">write()</code> 用於將代入內容寫入檔案，而 <code style="color:#f00">writelines()</code> 用於將清單字串寫入檔案。
+          </p>
+<pre style="color:#f00">
+  with open('files/test2.txt','wt',encoding='utf-8') as f:
+    f.write('南臺科技大學\n')
+    f.writelines(['資訊管理系\n','資管一甲'])
+</pre>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請利用input()命令輸入輸出檔名並輸入一串字，檔名與字用空格隔開(如 test2.txt Hello! How are you?)，寫入後請印出檔案內容，請比較檔案模式 a 與 w 的差異。
+          </h4><p></p>
+        </div>
+
+        <div class="px-3">
+          <h5>requests模組</h5>
+          <p>
+            資料輸入另一個方式是從網路取得資料，我們將藉由 <code style="color:#f00">requests</code> 模組，透過http取得網路資料，要使用 requests模組我們必須先安裝Python套件安裝程式(pip)，請在命令提示字元視窗中執行下列命令來安裝 pip：
+          </p>
+          <p style="color:#f00">py -m pip install --upgrade pip</p>
+          <p>
+            安裝完 pip 之後，請在命令提示字元視窗中執行 <code style="color:#f00">py -m pip install "requests"</code> 來安裝requests模組。安裝之後，請使用 <code style="color:#f00">from pip._vendor import requests</code> 在程式匯入 requests模組。透過 <code style="color:#f00">requests.ger(url:'資料API網址')</code> 存取網路資源，傳回物件屬性 <code style="color:#f00">status_code</code>傳回網路存取狀態(例如值為200代表成功，404代表找不到等)，臺南市公有免費停車場開放資料為例(https://citypark.tainan.gov.tw/App/parking.ashx?verCode=5177E3481D&type=1&ftype=1&exportTo=2)，因為傳回值為JSON清單，因此程式範例除匯入 requests 模組外，另外還使用系統內建 json 模組。
+          </p>
+<pre style="color:#f00">
+  from pip._vendor import requests
+  import json
+  r=requests.get(url='https://citypark.tainan.gov.tw/App/parking.ashx?verCode=5177E3481D&type=1&ftype=1&exportTo=2')
+  data=r.json()
+  print(data)
+</pre>
+        </div>
+        <div class="px-3">
+          <h5>JSON模組</h5>
+          <p>
+            JSON格式同Python中字典類型(dictionary)，常用函數包含 <code style="color:#f00">json.loads()、json.dumps()</code>，json.loads(同json())將字串格式JSON值轉為JSON物件，而json.dumps()將JSON物件轉為字串格式JSON值(請設定 ensure_ascii=False)。
+          </p>
+<pre style="color:#f00">
+import json
+data=json.loads('{"name":"南台科技大學"}')
+print(data)
+print(json.dumps(r,ensure_ascii=False))
+</pre>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請到中央氣象局氣象資料開放平台註冊(https://opendata.cwb.gov.tw/index)，登入後取得授權碼，並選擇 開發指南-資料擷取API說明文件，點選 一般天氣預報-今明 36 小時天氣預報，之後請用 requests 與 json模組讀取縣市天氣資料。
+          </h4><p></p>          
+        </div>       
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>
