@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>單晶片藍芽設定與實</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">物聯網基本應用與實作</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">物聯網簡介、單晶片介紹、設定與軟體安裝</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="program_led.html" class="nav-link">ESP32開發版簡介、程式簡介、全彩LED</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="ai2.html" class="nav-link">APP開發-App Inventro 2</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="bt.html" class="nav-link">單晶片藍芽設定與實作</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片WiFi設定與實作</a></span>
+        </li>        
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片溫度感測器雲端應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片與手機開發應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">WiFi/藍芽排風扇實作</a></span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">單晶片藍芽設定與實</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <div class="px-3">
+          <h3 class="text-dark">藍芽原理</h3>
+          <p>
+            藍芽（Bluetooth）是一種無線通訊技術標準，用來讓固定與行動裝置在短距離間交換資料。藍芽可區分為傳統藍芽與低功耗藍芽。
+          </p>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">ESP32傳統序列藍芽</h3>
+          <p>
+            請開啟Arduino IDE並選擇 <code style="color:#f00">檔案-範例-BluethhthSerial-SerialtoSerialBT</code>，開啟後檔案如下：
+          </p>
+<pre style="color:#f00">
+#include "BluetoothSerial.h"
+    
+BluetoothSerial SerialBT; //宣告序列藍芽變數
+    
+void setup() {
+    Serial.begin(115200);
+    SerialBT.begin("長榮1號"); //請自訂設備名稱
+}
+    
+void loop() {
+    if (SerialBT.available()) { //資料從手機端到ESP32
+        Serial.println(SerialBT.read());
+    }
+    delay(20);
+}
+</pre>
+            <p>
+                同學需修改設備名稱。
+            </p>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">APP Inventor 2-序列藍芽</h3>
+          <p style="color:#f00;">
+            用於將文字從手機透過序列藍芽傳送至ESP32，之後再將原訊息加上 FromESP32 從ESP32透過藍芽傳送至手機，首先進行手機版面設計。頁面包含 清單選擇器(List Picker)、一個文字方塊用於輸入文字、一個按鈕用於點選傳送。執行程式前，請先配對手機與ESP32藍芽。      
+          </p>
+          <p>
+              <img src="imgs/bt/p1.png" width="60%">
+          </p>
+          <p>
+            <img src="imgs/bt/p2.png" width="60%">
+        </p>
+          
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">APP Inventor 2-序列藍芽控制全彩LED</h3>
+          <p>
+            手機版面設計。頁面包含 3個標籤(Label)、3個滑桿(Slider)、一個清單選擇器。
+          </p>
+          <p>
+            <img src="imgs/bt/p3.png" width="40%">
+        </p>
+        <p>
+          <img src="imgs/bt/p4.png" width="80%">
+      </p>
+                  
+        </div>
+        
+        
+                  
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>

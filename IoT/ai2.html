@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APP開發-App Inventro 2</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- Side-Nav -->
+    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+      <ul class="nav flex-column text-white w-100">
+        <li class="nav-item" style="background-color: #fff;padding-left:10px;padding-top:10px;border-bottom: rgb(255, 115, 0) 2px solid;font-size: 16pt;">
+          <p style="color:rgb(248, 138, 11);font-weight: 700;">物聯網基本應用與實作</p>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="index.html" class="nav-link">物聯網簡介、單晶片介紹、設定與軟體安裝</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="program_led.html" class="nav-link">ESP32開發版簡介、程式簡介、全彩LED</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="ai2.html" class="nav-link">APP開發-App Inventro 2</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="bt.html" class="nav-link">單晶片藍芽設定與實作</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片WiFi設定與實作</a></span>
+        </li>        
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片溫度感測器雲端應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">單晶片與手機開發應用</a></span>
+        </li>
+        <li class="mx-2">
+          <span class="menuitem"><a href="#" class="nav-link">WiFi/藍芽排風扇實作</a></span>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Main Wrapper -->
+    <div class="p-2 my-container active-cont">
+      <!-- Breadcrumb -->
+      <div class="bg-light px-5" aria-label="breadcrumb" style="height:40px;position:fixed;width:100%;top:0;">
+        <a class="btn border-0" id="menu-btn" style="position:fixed"><i class="fas fa-bars"></i></a>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">APP開發-App Inventro 2</li>
+        </ol>
+      </div>
+      <!--End Top Nav -->
+
+      <!-- main page -->
+      <div style="margin-top:50px;">
+        <div class="px-3">
+          <h3 class="text-dark">APP Inventor簡介</h3>
+          <p>
+            <a href="https://appinventor.mit.edu/explore/ai2" target="_blank">APP Inventor</a>是一款圖形界面的Android智慧型手機應用程式開發軟體。它一開始由Google提供的應用軟體，現在由麻省理工學院維護及營運。開發者可以使用Google帳號登入並進行開發。
+          </p>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">開發介面介紹</h3>
+          <p>
+            請點選 Creat Apps並使用Google 帳號登入，登入後請將顯示語言由英文(English)改為繁體中文，之後請點選 <code style="color:f00">新增專案</code>並輸入英文專案名稱，開啟專案後，我們會看到App Inventor設計介面，介面主要有5個部分包含 <code style="color:f00">組件面板、工作面板、組件列表、組件屬性與畫面/程式設計切換(如下圖)</code>。組件用於設定APP包含組件，工作面板用於顯示現在組件在螢幕呈現樣子，組件列表以樹狀圖方式顯示螢幕組件從屬關係，組件屬性用於設定各個組件屬性包含大小、顏色等等，畫面/程式設計用於切換畫面設計模式或程式設計模式。課程說明前請到Google Play Store下載 MIT AI2 Companion或Apple APP Store下載MIT AI Companion。
+          </p>
+          <p><img src="imgs/ai2/pic2.png" width="70%"/></p>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">組件-使用者介面</h3>
+          <p style="color:#f00;">
+            用於設定螢幕常用控制項包含按鈕、核取方塊、圖像、標籤、滑桿、開關(Switch)、文字輸入等。      
+          </p>
+          <ul>
+            <li>
+              按鈕：用於點選，常用屬性包含背景顏色、啟用、字體大小、高度、寬度、圖像、形狀、文字等，按鈕一般會與與程式搭配。
+              <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+                練習：設定一按鈕寬度填滿、背景藍色、字白色、字體大小、按鈕文字為「按鈕1」，並利用AI Companion顯示於手機
+              </h4>
+            </li>
+            <li>
+              核取方塊：用於進行勾選，屬性多同於按鈕。
+            </li>
+            <li>
+              圖像：用於顯示圖片，屬性包含高度、寬度、使用圖片及旋轉角度等，使用者必須先上傳文件後才能指定顯示圖片。
+              <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+                練習：請在手機顯示以下任一張圖片：
+              </h4>
+              <img src="imgs/ai2/mac1.png"/><p></p>
+              <img src="imgs/ai2/mac2.png"/><p></p>
+              <img src="imgs/ai2/mac3.png"/><p></p>
+              <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+                練習：請顯示圖片按鈕
+              </h4>
+            </li>
+            <li>
+              標籤：用於顯示標籤文字，屬性多同於按鈕
+            </li>
+            <li>
+              滑桿：利用滑動改變值，屬性包含寬度、滑桿最大值、滑桿最小值、滑桿起始值等
+            </li>
+            <li>
+              開關：用於進行切換
+            </li>           
+          </ul>
+        </div>
+
+        <div class="px-3">
+          <h3 class="text-dark">組件-介面配置</h3>
+          <p>
+            介面配置用於設定手機螢幕版面，預設螢幕配置為由上到下，使用者可以利用介面配置組件改變螢幕組件擺放方式。介面配置組件包含(水平配置、水平捲動配置、表格配置、垂直配置、垂直捲動配置)。<code style="color:#f00">請注意手機頁面一定從介面配置開始設計</code>
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請建立下列版面(上傳3張圖片並由上而下擺放):
+          </h4>
+          <p>
+            <img src="imgs/ai2/layout2.png" width="30%">
+          </p>
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請建立下列版面(上傳3張圖片並由上而下，第一排一張、第二排兩張):
+          </h4>
+          <p>
+            <img src="imgs/ai2/layout3.png" width="30%">
+          </p> 
+          <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+            練習：請建立下列版面:
+          </h4>
+          <p>
+            <img src="imgs/ai2/layout1.png" width="30%">
+          </p>         
+        </div>
+        
+        <div class="px-3">
+          <h3 class="text-dark">程式設計</h3>
+          <p>
+            當版面設計完畢後，使用者可以切換至程式設計，針對個別組件的動作來設定對應執行程式。程式設計包含左邊 預設程式模組與螢幕組件 及右手邊垃圾桶，使用者對不需要的程式命令可直接拉至垃圾桶刪除。請注意所有組件見程式包含兩個類別(事件與動作)，事件用於設定當組件發生某些狀況時要執行的動作，以核取方塊為例如下圖(土黃色為事件、綠色為動作)
+          </p>
+          <p>
+            <img src="imgs/ai2/prog1.png" width="90%">
+          </p>
+          <p>
+            <img src="imgs/ai2/prog2.png" width="70%">
+          </p>
+          <ul>
+            <li>
+            預設程式模組包含 控制(條件或迴圈)、邏輯(條件對錯動作)、數學(數字動作)、本文(文字動作)、變量(設定變數)。
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：請在螢幕放置核取方塊及標籤，當使用者勾選時標籤設定為Yes否則設定為No
+            </h4>
+            <p>
+              <img src="imgs/ai2/prog3.png" width="60%">
+            </p>
+            <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+              練習：設定滑桿最大最小值為100、10，預設值為50，當滑桿值改變時，僵直顯示於標籤
+            </h4>
+          </li>
+          </ul>                
+        </div>
+                  
+      </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- custom js -->
+    <script>
+      var menu_btn = document.querySelector("#menu-btn");
+      var sidebar = document.querySelector("#sidebar");
+      var container = document.querySelector(".my-container");
+      menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+      });
+    </script>
+  </body>
+</html>
