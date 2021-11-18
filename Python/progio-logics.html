@@ -218,7 +218,67 @@ print(json.dumps(r,ensure_ascii=False))
           <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
             練習：請到中央氣象局氣象資料開放平台註冊(https://opendata.cwb.gov.tw/index)，登入後取得授權碼，並選擇 開發指南-資料擷取API說明文件，點選 一般天氣預報-今明 36 小時天氣預報，之後請用 requests 與 json模組讀取縣市天氣資料。
           </h4><p></p>          
-        </div>       
+        </div>
+        <h3 class="text-dark p-3">條件-if</h3>
+        <div class="px-3">
+          <p>
+            當程式需進行條件判斷時會使用條件 <code style="color:#f00">if</code>，Python條件設定有下列三種模式：
+          </p>
+<pre style="color:#f00">
+  if 條件:
+    條件對執行命令
+</pre>
+<pre style="color:#f00">
+  if 條件:
+    條件對執行命令
+  else:
+    條件錯執行命令
+</pre>
+<pre style="color:#f00">
+  if 條件1:
+    條件1對執行命令
+  elif 條件2:
+    條件2對執行命令
+  elif 條件3:
+    條件3對執行命令
+  else:
+    先前條件都錯執行命令
+</pre>
+<h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+  練習：輸入月份，然後判斷其所屬的季節（3~5月為春季，6~8月為夏季，9~11月為秋季，12~2 月為冬季）。
+</h4><p></p>
+<h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+  練習：E-Tutor線上題庫-基礎題目 34、39。
+</h4><p></p>
+        </div>
+
+        <h3 class="text-dark p-3">迴圈-for</h3>
+        <div class="px-3">
+          <p>
+            當程式需重複執行時會使用迴圈，Python迴圈設定有下列二種模式：for迴圈與while迴圈，for迴圈用於順序資料，while迴圈則當條件為真時重複執行。
+          </p>
+<pre style="color:#f00">
+  for i in range(0,9):
+    迴圈執行命令(共9次)
+</pre>
+<pre style="color:#f00">
+  while 條件:
+    迴圈執行命令
+</pre>
+        <p>
+          迴圈通常會搭配兩個命令 <code style="color:#f00">break、continue</code>，<code style="color:#f00">break</code>用於跳出現在的迴圈，<code style="color:#f00">continue</code>用於停止繼續執行接下的迴圈命令，回到迴圈的開使，繼續下一個迴圈命令。
+        </p>
+        <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+          練習：輸入一個數字並印出該數正因數(一個數的因數是指該數可被其因數整除)。
+        </h4><p></p>
+        <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+          練習：輸入一個數字並印出該數的空心等腰直角三角形。
+        </h4><p></p>
+        <h4 style="color:rgb(234, 0, 255);font-size:14pt;font-weight:bold;">
+          練習：E-Tutor線上題庫-基礎題目 8、9、20、26。
+        </h4><p></p>
+        </div>
+
       </div>
     </div>
 
