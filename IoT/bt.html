@@ -109,15 +109,104 @@ void loop() {
         <div class="px-3">
           <h3 class="text-dark">APP Inventor 2-序列藍芽控制全彩LED</h3>
           <p>
-            手機版面設計。頁面包含 3個標籤(Label)、3個滑桿(Slider)、一個清單選擇器。
+            在利用序列藍芽控制全彩LED之前，先讓同學熟悉如何在手機設定顏色。頁面包含 一個<a href="imgs/bt/colorwheel.png">顏色選取面板</a>、一個移動點及一個顯示現在位置顏色的標籤。設定步驟如下：
           </p>
+          <ul>
+            <li>
+              設定project螢幕水平置中對齊
+            </li>
+            <li>
+              點選上載檔案(upload file)上載圖片colorwheel.png
+            </li>
+            <li>
+              從左邊繪圖與動畫中加入畫布(canvas)，設定畫布背景顏色(BackgroundColor)為沒有(none)，背景圖片為colorwheel.png，畫布寬設為填滿父親(fill parent)，高設50百分比
+            </li>
+            <li>
+              從左邊繪圖與動畫中加入點(ball)，並勾選設為中心點(originAtCenter)
+            </li>
+            <li>
+              從左邊使用者介面(user interface)拉入標籤(label)，並設定標籤字體大小(FontSize)為30點
+            </li>
+          </ul>
           <p>
             <img src="imgs/bt/p3.png" width="40%">
         </p>
         <p>
+          接下來設定程式區塊(Blocks)
+        </p>
+        <ul>
+          <li>
+            點選點並拉入當點被拖拉(When Dragded)
+          </li>
+          <li>
+            點選點並拉入設定點X值為(set .. X to)，之後拉入當點被拖拉(When Dragded)的取得現在X位置(get currentX)
+          </li>
+          <li>
+            點選點並拉入設定點X值為(set .. Y to)，之後拉入當點被拖拉(When Dragded)的取得現在Y位置(get currentY)
+          </li>
+          <li>
+            點選標籤並拉入設定標籤文字為(set .. Text to)，之後點選畫布(Canvas)拉入呼叫取得背景像素點顏色(call .. getBackgroundPixelColor)，並將x與y拉入取得現在X位置(currentX)與取得現在Y位置(currentY)。呼叫取得背景像素點顏色(call .. getBackgroundPixelColor)並將結果加入顏色(color)中分割顏色(split color)會傳回一個清單(list)包含4個值(紅、綠、藍、透明度)
+          </li>
+          <li>
+            點選清單(list)標籤並拉入選擇清單項目(select list item)，將呼叫取得背景像素點顏色(call .. getBackgroundPixelColor)設在清單(list)位置，在索引位置(index)設定數字1，代表取得紅色
+          </li>
+          <li>
+            之後用相同步驟，但設定索引位置(index)值為2與3取得綠色與藍色值，之後透過文字(Text)中合併(join)將三個顏色值用逗點隔開，並選取標籤中設定標籤值(set .. Text to)將合併結果設定於標籤
+          </li>
+        </ul>
+        <p>
           <img src="imgs/bt/p4.png" width="80%">
-      </p>
-                  
+        </p>
+        <p>
+          接下來在上述設計中加入藍芽設定即可傳送選取顏色
+        </p>
+        <ul>
+          <li>
+            刪除標籤並加入清單選擇器(List Picker)及連接中藍芽客戶(BluetoothClient)
+          </li>
+          <li>
+            在程式區塊點選清單選擇器(List Picker)並拉入在清單選擇器點選前(when .. BeforePicking)，設定清單項目(Element)為藍芽客戶(BluetoothClient)的位址與名稱(AddressAndName)
+          </li>
+        </ul>
+        <p>
+          <img src="imgs/bt/p7.png" width="80%">
+        </p>
+        <p>最後在Arduino IDE設定下列程式即可</p>
+<pre style="color:#f00">
+  #include "BluetoothSerial.h"
+
+  BluetoothSerial SerialBT;
+  
+  void setup() {
+    ledcSetup(0,12000,8); //定義3個PWM頻道分別為0,1,2 對應至GPIO接腳 21,16,17控制紅, 綠, 藍
+    ledcAttachPin(21,0);
+    ledcSetup(1,12000,8);
+    ledcAttachPin(16,1);
+    ledcSetup(2,12000,8);
+    ledcAttachPin(17,2);
+    
+    Serial.begin(115200);
+    SerialBT.begin("長榮1號"); //請自訂設備名稱
+    Serial.println("藍芽已經開啟!可以開始配對");
+  }
+  
+  void loop() {
+    if (SerialBT.available()) { //資料從手機端到ESP32
+      String indata=SerialBT.readString(); //讀出藍芽接收資料
+      
+      int i=indata.indexOf(';'); //將收資料轉成 紅 綠 藍值
+      int r=indata.substring(0,i).toInt();
+      int j=indata.indexOf(';',i+1);
+      int g=indata.substring(i+1,j).toInt();
+      int b=indata.substring(j+1).toInt();
+      
+      ledcWrite(0,r); //ˋ將值傳至對應頻道進行設定
+      ledcWrite(1,g);
+      ledcWrite(2,b);    
+    }
+    delay(20);
+  }
+</pre>
         </div>
         
         
