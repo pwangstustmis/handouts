@@ -145,8 +145,8 @@ const int INB = 5;
 void setup() {
     Serial.begin(115200);
     //設定腳位為輸出
-    digitalWrite(INA,OUTPUT);
-    digitalWrite(INB,OUTPUT);
+    pinMode(INA,OUTPUT);
+    pinMode(INB,OUTPUT);
 
     //設定風扇停止轉動
     digitalWrite(INA,LOW);
@@ -184,8 +184,8 @@ const int INB = 5;
 void setup() {
     Serial.begin(115200);
     //設定腳位為輸出
-    digitalWrite(INA,OUTPUT);
-    digitalWrite(INB,OUTPUT);
+    pinMode(INA,OUTPUT);
+    pinMode(INB,OUTPUT);
 
     //設定風扇停止轉動
     digitalWrite(INA,LOW);
@@ -201,7 +201,7 @@ void setup() {
 void loop() {
     //每5秒順轉50轉速
     for (int i=100;i&lt;=250;i=i+50) {
-        ledcWrite(INB,i);
+        ledcWrite(1,i);
         delay(5000);
     }
     digitalWrite(INB,LOW);
@@ -209,7 +209,7 @@ void loop() {
 
     //每5秒順轉50轉速
     for (int i=100;i&lt;=250;i=i+50) {
-        ledcWrite(INA,i);
+        ledcWrite(0,i);
         delay(5000);
     }
     digitalWrite(INA,LOW);
